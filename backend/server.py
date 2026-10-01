@@ -37,6 +37,7 @@ def make_handler(store):
             if url.path == '/api/status':
                 return self.send(200, {'last_import': store.last_import(), 'timezone': 'Europe/Madrid',
                     'windows': [[a.isoformat(), b.isoformat()] for a, b in windows],
+                    'schedule_coverage':json.loads(store.metadata('schedule_coverage') or '[]'),
                     'automatic_collection': False, 'schedule_collector_available':True,
                     'last_schedule_collection':store.metadata('last_schedule_collection')})
             if url.path in ('/api/matches', '/api/demo/matches'):

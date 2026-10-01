@@ -110,7 +110,7 @@ def fetch_schedule(page, code, start, end, catalog):
     raise RuntimeError(f'Club {code}, {start} — {end}: {last_error}')
 
 
-def collect_schedules(catalog, today, club_ids=None, channel=None, headed=False, progress=print):
+def collect_schedules(catalog, today, club_ids=None, channel=None, headed=False, progress=print, on_result=None):
     from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
     clubs = {t['club_id']:t['club_name'] for t in catalog['teams']}
     if club_ids is not None:
@@ -134,6 +134,8 @@ def collect_schedules(catalog, today, club_ids=None, channel=None, headed=False,
                         if item['id'] in records:
                             item['team_ids'] = sorted(set(item['team_ids']) | set(records[item['id']]['team_ids']))
                         records[item['id']] = item
+                    if on_result:
+                        on_result(code,start,end,result)
                     progress(f'{club} · {start} — {end}: {len(result)} partidos',flush=True)
                     time.sleep(2)
         finally:
@@ -151,7 +153,15 @@ def main():
     args = parser.parse_args()
     catalog = json.loads((ROOT/'data/catalog.json').read_text(encoding='utf-8'))
     try:
-        records = collect_schedules(catalog,args.today,args.club,args.channel,args.headed)
+        store = Store(args.db)
+        def save_result(code,start,end,result):
+            store.upsert(result,{t['id'] for t in catalog['teams']})
+            coverage = json.loads(store.metadata('schedule_coverage') or '[]')
+            coverage = [row for row in coverage if not (row['club_id']==code and row['from']==start.isoformat() and row['to']==end.isoformat())]
+            coverage.append({'club_id':code,'from':start.isoformat(),'to':end.isoformat(),'count':len(result)})
+            with store.connect() as db:
+                db.execute('INSERT INTO meta VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value',('schedule_coverage',json.dumps(coverage)))
+        records = collect_schedules(catalog,args.today,args.club,args.channel,args.headed,on_result=save_result)
         count = Store(args.db).upsert(records,{t['id'] for t in catalog['teams']})
         with Store(args.db).connect() as db:
             db.execute('INSERT INTO meta VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value',
