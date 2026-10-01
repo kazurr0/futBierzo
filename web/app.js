@@ -1,3 +1,4 @@
+import {matchGroups, selectedWindow} from './matches.js';
 import {selectionState, toggleGroup, normalize, pending, competitionsForCategory} from './selection.js';
 import {crestMarkup, matchBadge, handleCrestError} from './crests.js';
 
@@ -120,11 +121,13 @@ function renderMatches() {
   const matches = state.matches.filter(m => (state.view !== 'live' || ['live','provisional','halftime'].includes(m.status)) &&
     (state.filter !== 'pending' || pending(m)) && (state.filter !== 'final' || m.status === 'final'));
   const noSelection = $('#only-mine').checked && !state.selected.size;
-  $('#match-list').innerHTML = matches.map(m => `<button class="match-card" data-match="${escape(m.id)}" aria-label="Ver ${escape(m.home)} contra ${escape(m.away)}">
+  const card = m => `<button class="match-card" data-match="${escape(m.id)}" aria-label="Ver ${escape(m.home)} contra ${escape(m.away)}">
     <div class="match-top"><span>${escape(m.competition)}</span>${badge(m)}</div>
     <div class="score-row"><span class="team">${crestMarkup(matchBadge(m,'home',state.catalog),m.home,'match-crest')}${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${crestMarkup(matchBadge(m,'away',state.catalog),m.away,'match-crest')}${escape(m.away)}</span></div>
     <div class="match-bottom"><span>${escape(dateLabel(m.date))}${m.time ? ` · ${escape(m.time)}` : ''}</span><small>${escape(m.score ? updateLabel(m.updated_at) : m.field || 'Campo sin publicar')}</small></div>
-  </button>`).join('') || `<div class="empty"><h3>${noSelection ? 'Elige tus equipos' : state.view === 'live' ? 'La grada está en espera' : 'Aún no hay partidos para mostrar'}</h3><p>${noSelection ? 'Selecciona equipos en «Mis equipos» o desactiva «Solo mis equipos» para ver todo el Bierzo.' : $('#demo').checked ? 'No hay ejemplos que coincidan con esta selección y estos filtros.' : 'Los partidos aparecerán al importar los datos de la federación. Puedes activar «Ver demostración» para explorar el diseño.'}</p>${noSelection ? '<button class="primary" data-view="teams">Seleccionar equipos</button>' : ''}</div>`;
+  </button>`;
+  const groups = matchGroups(matches,$('#group-by').value,state.catalog,$('#only-mine').checked ? state.selected : null);
+  $('#match-list').innerHTML = groups.map(group => `<section class="match-group">${group.title ? `<h2>${escape(group.title)} <small>${group.items.length} partidos</small></h2>` : ''}<div class="match-grid">${group.items.map(card).join('')}</div></section>`).join('') || `<div class="empty"><h3>${noSelection ? 'Elige tus equipos' : state.view === 'live' ? 'La grada está en espera' : 'Aún no hay partidos para mostrar'}</h3><p>${noSelection ? 'Selecciona equipos en «Mis equipos» o desactiva «Solo mis equipos» para ver todo el Bierzo.' : $('#demo').checked ? 'No hay ejemplos que coincidan con esta selección y estos filtros.' : 'Los partidos aparecerán al importar los datos de la federación. Puedes activar «Ver demostración» para explorar el diseño.'}</p>${noSelection ? '<button class="primary" data-view="teams">Seleccionar equipos</button>' : ''}</div>`;
 }
 
 async function loadMatches() {
@@ -134,12 +137,14 @@ async function loadMatches() {
   try {
     const status = await get('/api/status');
     const demo = $('#demo').checked;
-    const params = new URLSearchParams({from:status.windows[0][0],to:status.windows[1][1]});
+    status.windows.forEach((window,index) => {$('#period option[value="'+index+'"]').textContent = `${dateLabel(window[0])} — ${dateLabel(window[1])} · 7 días`;});
+    const period = selectedWindow(status.windows,$('#period').value);
+    const params = new URLSearchParams({from:period[0],to:period[1]});
     if ($('#only-mine').checked) params.set('teams', [...state.selected].join(','));
     const data = await get(`${demo ? '/api/demo/matches' : '/api/matches'}?${params}`);
     if (request !== state.request) return;
     state.matches = data.matches;
-    $('#date-range').textContent = `${dateLabel(status.windows[0][0])} — ${dateLabel(status.windows[1][1])}`;
+    $('#date-range').textContent = `${dateLabel(period[0])} — ${dateLabel(period[1])}`;
     $('#feed-note').textContent = demo ? 'DEMOSTRACIÓN · Encuentros y resultados ficticios para probar la interfaz.' :
       `${status.last_schedule_collection ? 'Horarios consultados en RFCYLF: ' + new Date(status.last_schedule_collection).toLocaleString('es', {timeZone:'Europe/Madrid'}) : status.last_import ? 'Última importación: ' + new Date(status.last_import).toLocaleString('es', {timeZone:'Europe/Madrid'}) : 'Todavía no se han importado partidos.'} · Conexión del directo pendiente. Los datos ausentes no se interpretan como 0–0.`;
     renderMatches();
@@ -213,6 +218,8 @@ async function init() {
     $('#go-agenda').addEventListener('click', () => changeView('agenda'));
     for (const selector of ['#demo','#only-mine']) $(selector).addEventListener('change', loadMatches);
     $('#refresh').addEventListener('click', () => {notice('');loadMatches();});
+    $('#period').addEventListener('change', loadMatches);
+    $('#group-by').addEventListener('change', renderMatches);
     $('#close-detail').addEventListener('click', () => $('#detail').close());
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
   } catch (error) {notice(error.message);$('#team-list').innerHTML = '<div class="empty"><h3>El catálogo no está disponible</h3><p>Recarga la página cuando vuelva la conexión.</p></div>';}

@@ -11,6 +11,7 @@ Web móvil para elegir equipos del Bierzo y consultar sus partidos. Diseño gran
 - `data/clubs.json` añade un registro de escudos por club, independiente de las categorías seguidas. Permite mostrar los escudos de equipos planificados sin código de categoría identificado y de seis clubes rivales externos. Las asociaciones se basan en nombres exactos y fichas verificadas; no se usan coincidencias parciales. En los 27 partidos locales se han comprobado 51 escudos; tres rivales conservan las iniciales pendientes de verificación.
 - Preferencias guardadas en el navegador de cada dispositivo; todavía no hay cuentas ni sincronización entre dispositivos.
 - Agenda de 14 días y vista de marcadores. Los partidos sin fecha u hora se conservan como pendientes.
+- Selector de los primeros siete días, los siguientes siete o los catorce juntos. Agrupación por categoría, división o club, con fecha y hora dentro de cada grupo; también admite una lista cronológica. Al agrupar por club, un partido entre dos clubes seguidos aparece una vez en el grupo de cada club. Los partidos sin fecha siguen visibles en cualquier bloque.
 - Detalle con marcador, actualización, descanso, alineaciones y eventos cuando el lote importado los incluya.
 - Modo de demostración explícito y separado de los datos reales. Los partidos ficticios no se guardan en la base de datos.
 - Manifest y service worker como base de una PWA. El catálogo y los resultados requieren conexión. La instalación depende del navegador y de servir la web por HTTPS (localhost sirve para desarrollo).

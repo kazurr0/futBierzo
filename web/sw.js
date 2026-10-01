@@ -1,5 +1,5 @@
-const CACHE = 'futbierzo-shell-v4';
-const SHELL = ['/', '/styles.css', '/app.js', '/selection.js', '/crests.js', '/icon.svg'];
+const CACHE = 'futbierzo-shell-v5';
+const SHELL = ['/', '/styles.css', '/app.js', '/selection.js', '/crests.js', '/matches.js', '/icon.svg'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL))));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))));
 self.addEventListener('fetch', event => {
