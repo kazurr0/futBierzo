@@ -26,6 +26,10 @@ def validate_match(raw):
         raise ValueError('Estado desconocido')
     if not isinstance(item['team_ids'], list) or not item['team_ids'] or not all(isinstance(x, str) and x.isdigit() for x in item['team_ids']):
         raise ValueError('team_ids debe contener códigos de equipo')
+    for side in ('home', 'away'):
+        code = item.get(f'{side}_team_id')
+        if code is not None and code not in item['team_ids']:
+            raise ValueError(f'{side}_team_id debe estar incluido en team_ids')
     item.setdefault('date', None)
     item.setdefault('time', None)
     if item['date'] is not None:
@@ -117,6 +121,9 @@ class Store:
                       key=lambda m: (m.get('date') or '9999', m.get('time') or '99:99', m['id']))
 
     def last_import(self):
+        return self.metadata('last_import')
+
+    def metadata(self, key):
         with self.connect() as db:
-            row = db.execute('SELECT value FROM meta WHERE key=?', ('last_import',)).fetchone()
+            row = db.execute('SELECT value FROM meta WHERE key=?', (key,)).fetchone()
         return row[0] if row else None

@@ -5,13 +5,14 @@ Web móvil para elegir equipos del Bierzo y consultar sus partidos. Diseño gran
 ## Primera versión
 
 - Selección por club, competición/categoría y favoritos. Selección parcial de un club, búsqueda sin acentos y acceso a todos los equipos del Bierzo.
+- Escudos de los 26 clubes, asociados a los 194 equipos y mostrados en selección, partidos y detalle. Se cargan desde las imágenes publicadas por RFCYLF y se sustituyen por iniciales si faltan o fallan. No se atribuye el escudo del equipo visitante a un rival que no esté identificado en el catálogo.
 - Preferencias guardadas en el navegador de cada dispositivo; todavía no hay cuentas ni sincronización entre dispositivos.
 - Agenda de 14 días y vista de marcadores. Los partidos sin fecha u hora se conservan como pendientes.
 - Detalle con marcador, actualización, descanso, alineaciones y eventos cuando el lote importado los incluya.
 - Modo de demostración explícito y separado de los datos reales. Los partidos ficticios no se guardan en la base de datos.
 - Manifest y service worker como base de una PWA. El catálogo y los resultados requieren conexión. La instalación depende del navegador y de servir la web por HTTPS (localhost sirve para desarrollo).
 
-**La recogida automática de partidos RFCYLF y los avisos de Telegram todavía no están conectados.** La API real empieza sin partidos. El catálogo es una instantánea de equipos y categorías; no debe interpretarse como una verificación actual de todos los grupos de competición.
+**La consulta de horarios RFCYLF ya está disponible por comando; el carrusel del directo y los avisos de Telegram todavía no están conectados.** La API real empieza sin partidos hasta ejecutar una consulta o importación. El catálogo es una instantánea de equipos y categorías; no debe interpretarse como una verificación actual de todos los grupos de competición.
 
 ## Ejecutar en Windows o Linux
 
@@ -29,6 +30,20 @@ python -m backend.server
 Abrir http://127.0.0.1:8000. Elegir equipos y entrar en Horarios. Activar «Ver demostración» y quitar «Solo mis equipos» para explorar todos los ejemplos. El servidor escucha solo en el equipo local por defecto.
 
 ## Importar partidos normalizados
+
+Para consultar los horarios reales de los próximos 14 días:
+
+```sh
+python -m pip install -r requirements-collector.txt
+python -m playwright install chromium
+python -m backend.rfcylf
+# Alternativa en Windows, con Chrome ya instalado:
+python -m backend.rfcylf --channel chrome
+# Solo un club (ejemplo: Atlético Bembibre):
+python -m backend.rfcylf --club 4006 --channel chrome
+```
+
+El colector realiza dos consultas de siete días por club, verifica el total de registros y guarda por código de acta. Ante una respuesta incompleta reintenta hasta tres veces; si no consigue un lote válido, interrumpe la importación y conserva los datos anteriores. No interpreta el marcador de la página de horarios: esa información se recogerá del carrusel. Si el catálogo no identifica algún rival, lo registra en `unresolved_teams` y no inventa su código o escudo. La consulta no está programada en segundo plano todavía.
 
 ```sh
 python -m backend.import_matches ruta/partidos.json
@@ -60,6 +75,8 @@ Formato: lista JSON de objetos. Ejemplo de estructura **ficticio** (no importar 
 
 `lineups` puede ser `{ "home": [{"number": 1, "name": "Nombre"}], "away": [] }`; `events`, una lista de `{ "minute": 12, "type": "Gol", "player": "Nombre" }`. `null` significa sin publicar. Una alineación no especifica posiciones en el campo; la web la muestra como lista.
 
+Se recomienda incluir `home_team_id` y `away_team_id` para identificar los escudos de cada lado; deben estar incluidos en `team_ids`. Si el rival es ajeno al catálogo, omitir su código y mostrar iniciales. Para lotes anteriores sin esos campos, la web solo asocia un escudo cuando coinciden un código participante y el nombre del equipo sin ambigüedad de club.
+
 ## API
 
 - `GET /api/catalog`: equipos y procedencia de la instantánea.
@@ -77,13 +94,14 @@ No hay endpoints públicos de escritura. La importación se ejecuta en el servid
 4. Consultar el detalle por código de acta para alineaciones y eventos disponibles. No deducir descanso del color ni de la hora de actualización.
 5. Guardar por acta y fecha de actualización; añadir registro de cambios para enviar avisos de Telegram sin duplicarlos. Los avisos dependerán de la publicación de la federación.
 
-Antes de activar esta conexión hay que validar los extractores contra HTML real, incluyendo partidos pendientes, paginación, respuestas incompletas y cambios de temporada. Esta versión no publica resultados inventados cuando falla una consulta.
+El extractor de horarios se ha comprobado contra consultas reales de dos bloques para Atlético Bembibre y Berciano-Villadepalos, incluyendo hora pendiente y un bloque de cero partidos. Hay pruebas con una captura real de 13 registros. Los listados de más de 200 registros se rechazan hasta implementar la paginación. Quedan pendientes refresco completo del catálogo, consulta del carrusel y validación de los detalles del partido. Esta versión no publica resultados inventados cuando falla una consulta.
 
 ## Validación
 
 ```sh
+python -m pip install -r requirements-collector.txt
 python -m unittest discover -s tests -p "test_*.py"
-node --test tests/selection.test.js
+node --test tests/*.test.js
 ```
 
 ## Alojamiento

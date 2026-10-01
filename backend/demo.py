@@ -12,7 +12,8 @@ def demo_matches(catalog, today):
     for index, status in enumerate(('live', 'provisional', 'scheduled', 'scheduled', 'final')):
         home, away = teams[index * 2:index * 2 + 2]
         item = {'id': f'demo-{index}', 'home': home['name'], 'away': away['name'],
-                'team_ids': [home['id'], away['id']], 'competition': home['competition'],
+                'team_ids': [home['id'], away['id']], 'home_team_id':home['id'],
+                'away_team_id':away['id'], 'competition': home['competition'],
                 'date': (today + timedelta(days=index if index < 4 else 0)).isoformat(),
                 'time': None if index == 3 else '17:30', 'status': status,
                 'score': [2, 1] if status in ('live', 'provisional', 'final') else None,

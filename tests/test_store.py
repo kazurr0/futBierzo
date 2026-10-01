@@ -56,6 +56,11 @@ class StoreTests(unittest.TestCase):
             self.store.upsert([match(score=[-1,0])],{'1'})
         with self.assertRaises(ValueError):
             self.store.upsert([match(updated_at='2026-10-01T18:00:00')],{'1'})
+    def test_side_identity_must_belong_to_participating_teams(self):
+        with self.assertRaises(ValueError):
+            self.store.upsert([match(home_team_id='999')],{'1'})
+        self.store.upsert([match(away_team_id='1')],{'1'})
+        self.assertEqual(self.get()[0]['away_team_id'],'1')
 
 
 if __name__ == '__main__':
