@@ -160,16 +160,17 @@ async function loadMatches() {
       `${status.last_schedule_collection ? 'Horarios consultados en RFCYLF: ' + new Date(status.last_schedule_collection).toLocaleString('es', {timeZone:'Europe/Madrid'}) : status.last_import ? 'Última importación: ' + new Date(status.last_import).toLocaleString('es', {timeZone:'Europe/Madrid'}) : 'Todavía no se han importado partidos.'} · Conexión del directo pendiente. Los datos ausentes no se interpretan como 0–0.`;
     if (!demo) {
       const clubs = new Set(state.catalog.teams.filter(t => !$('#only-mine').checked || state.selected.has(t.id)).map(t => t.club_id));
+      const coverageStart = period[1] >= status.windows[0][0] && period[0] < status.windows[0][0] ? status.windows[0][0] : period[0];
       const covered = [...clubs].filter(id => {
         const rows = (status.schedule_coverage || []).filter(r => r.club_id === id);
         // Only count a club when every requested date has a confirmed query.
-        for (let day = new Date(period[0]+'T12:00:00Z'); day.toISOString().slice(0,10) <= period[1]; day.setUTCDate(day.getUTCDate()+1)) {
+        for (let day = new Date(coverageStart+'T12:00:00Z'); day.toISOString().slice(0,10) <= period[1]; day.setUTCDate(day.getUTCDate()+1)) {
           const stamp = day.toISOString().slice(0,10);
           if (!rows.some(r => r.from <= stamp && r.to >= stamp)) return false;
         }
         return true;
       }).length;
-      if (covered < clubs.size) $('#feed-note').textContent = `AGENDA INCOMPLETA · ${covered} de ${clubs.size} clubes seleccionados con consulta confirmada para todo el periodo. Seleccionar equipos no descarga sus horarios. ` + $('#feed-note').textContent;
+      if (covered < clubs.size) $('#feed-note').textContent = `AGENDA INCOMPLETA · ${covered} de ${clubs.size} clubes seleccionados con consulta confirmada del ${dateLabel(coverageStart)} al ${dateLabel(period[1])}. Seleccionar equipos no descarga sus horarios. ` + $('#feed-note').textContent;
     }
     renderMatches();
   } catch (error) {

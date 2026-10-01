@@ -84,7 +84,7 @@ Se recomienda incluir `home_team_id` y `away_team_id` para identificar los escud
 ## API
 
 - `GET /api/catalog`: equipos y procedencia de la instantánea.
-- `GET /api/status`: última importación y los dos bloques de siete días en Europe/Madrid.
+- `GET /api/status`: última importación, los dos bloques de siete días en Europe/Madrid y consultas confirmadas por club y rango (`schedule_coverage`).
 - `GET /api/matches?from=2026-10-01&to=2026-10-14&teams=16524,15611`: datos reales importados. Omitir `teams` para todos; `teams=` devuelve ninguno.
 - `GET /api/demo/matches`: ejemplos efímeros; admite los mismos filtros.
 
@@ -113,3 +113,5 @@ node --test tests/*.test.js
 GitHub guarda el código. Para ejecutar la API y el futuro monitor hace falta un servidor o servicio con Python y almacenamiento persistente. GitHub Pages por sí solo no ejecuta este backend. Antes de publicación: servidor de producción, HTTPS, copias de seguridad y supervisión de las consultas. No copiar `configuracion_bot.json` ni perfiles del monitor antiguo.
 
 Proyecto independiente, sin afiliación oficial a RFCYLF.
+
+Cada respuesta válida se guarda inmediatamente. Si falla un club posterior, los partidos ya importados se conservan. La agenda indica cobertura incompleta para los clubes seleccionados y las fechas futuras del periodo. Seleccionar equipos no ejecuta el recolector automáticamente.
