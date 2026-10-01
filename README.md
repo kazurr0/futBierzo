@@ -6,6 +6,8 @@ Web móvil para elegir equipos del Bierzo y consultar sus partidos. Diseño gran
 
 - Selección por club, competición/categoría y favoritos. Selección parcial de un club, búsqueda sin acentos y acceso a todos los equipos del Bierzo.
 - Escudos de los 26 clubes, asociados a los 194 equipos y mostrados en selección, partidos y detalle. Se cargan desde las imágenes publicadas por RFCYLF y se sustituyen por iniciales si faltan o fallan. No se atribuye el escudo del equipo visitante a un rival que no esté identificado en el catálogo.
+- El filtro de competición depende de la categoría: Infantiles muestra Regional 1 y 2 y Provincial 1, 2 y 3 del catálogo. Cambiar de categoría conserva únicamente una competición que siga siendo compatible.
+- `data/clubs.json` añade un registro de escudos por club, independiente de las categorías seguidas. Permite mostrar los escudos de equipos planificados sin código de categoría identificado y de seis clubes rivales externos. Las asociaciones se basan en nombres exactos y fichas verificadas; no se usan coincidencias parciales. En los 27 partidos locales se han comprobado 51 escudos; tres rivales conservan las iniciales pendientes de verificación.
 - Preferencias guardadas en el navegador de cada dispositivo; todavía no hay cuentas ni sincronización entre dispositivos.
 - Agenda de 14 días y vista de marcadores. Los partidos sin fecha u hora se conservan como pendientes.
 - Detalle con marcador, actualización, descanso, alineaciones y eventos cuando el lote importado los incluya.

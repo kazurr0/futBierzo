@@ -29,6 +29,18 @@ export function matchTeam(match, side, teams) {
   return candidates.length && new Set(candidates.map(t => t.club_id)).size === 1 ? candidates[0] : null;
 }
 
+export function matchBadge(match, side, catalog) {
+  const team = matchTeam(match, side, catalog.teams);
+  if (team || match[`${side}_team_id`]) return team;
+  // A club badge does not require inventing a missing team/category identifier.
+  const name = normalize(match[side]);
+  const base = name.replace(/\s+["“][a-z]["”]$/, '');
+  const clubs = (catalog.clubs || []).filter(club =>
+    normalize(club.name) === base ||
+    [club.name, ...(club.team_names || [])].some(alias => normalize(alias) === name));
+  return clubs.length === 1 ? clubs[0] : null;
+}
+
 export function handleCrestError(event) {
   const image = event.target;
   if (image instanceof HTMLImageElement && image.hasAttribute('data-crest')) {

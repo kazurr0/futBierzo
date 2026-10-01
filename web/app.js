@@ -1,5 +1,5 @@
-import {selectionState, toggleGroup, normalize, pending} from './selection.js';
-import {crestMarkup, matchTeam, handleCrestError} from './crests.js';
+import {selectionState, toggleGroup, normalize, pending, competitionsForCategory} from './selection.js';
+import {crestMarkup, matchBadge, handleCrestError} from './crests.js';
 
 document.addEventListener('error', handleCrestError, true);
 
@@ -32,6 +32,14 @@ function summary() {
   $('#selection-count').textContent = n;
   $('#selection-summary').textContent = n ? `Sigues ${n} ${n === 1 ? 'equipo' : 'equipos'} de ${clubs.size} ${clubs.size === 1 ? 'club' : 'clubes'}` : 'Sin equipos seleccionados';
   $('#all-bierzo').textContent = n === state.catalog.teams.length ? '✓ Sigues todo el Bierzo' : 'Seguir todo el Bierzo';
+}
+
+function updateCompetitionFilter() {
+  const selected = $('#competition').value;
+  const values = competitionsForCategory(state.catalog.teams,$('#category').value);
+  $('#competition').innerHTML = '<option value="">Todas las competiciones</option>' +
+    values.map(value => `<option value="${escape(value)}">${escape(value)}</option>`).join('');
+  $('#competition').value = values.includes(selected) ? selected : '';
 }
 
 function renderTeams() {
@@ -102,7 +110,7 @@ function renderMatches() {
   const noSelection = $('#only-mine').checked && !state.selected.size;
   $('#match-list').innerHTML = matches.map(m => `<button class="match-card" data-match="${escape(m.id)}" aria-label="Ver ${escape(m.home)} contra ${escape(m.away)}">
     <div class="match-top"><span>${escape(m.competition)}</span>${badge(m)}</div>
-    <div class="score-row"><span class="team">${crestMarkup(matchTeam(m,'home',state.catalog.teams),m.home,'match-crest')}${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${crestMarkup(matchTeam(m,'away',state.catalog.teams),m.away,'match-crest')}${escape(m.away)}</span></div>
+    <div class="score-row"><span class="team">${crestMarkup(matchBadge(m,'home',state.catalog),m.home,'match-crest')}${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${crestMarkup(matchBadge(m,'away',state.catalog),m.away,'match-crest')}${escape(m.away)}</span></div>
     <div class="match-bottom"><span>${escape(dateLabel(m.date))}${m.time ? ` · ${escape(m.time)}` : ''}</span><small>${escape(m.score ? updateLabel(m.updated_at) : m.field || 'Campo sin publicar')}</small></div>
   </button>`).join('') || `<div class="empty"><h3>${noSelection ? 'Elige tus equipos' : state.view === 'live' ? 'La grada está en espera' : 'Aún no hay partidos para mostrar'}</h3><p>${noSelection ? 'Selecciona equipos en «Mis equipos» o desactiva «Solo mis equipos» para ver todo el Bierzo.' : $('#demo').checked ? 'No hay ejemplos que coincidan con esta selección y estos filtros.' : 'Los partidos aparecerán al importar los datos de la federación. Puedes activar «Ver demostración» para explorar el diseño.'}</p>${noSelection ? '<button class="primary" data-view="teams">Seleccionar equipos</button>' : ''}</div>`;
 }
@@ -149,9 +157,9 @@ function changeView(view) {
 function showDetail(id) {
   const m = state.matches.find(match => match.id === id);
   if (!m) return;
-  const lineup = m.lineups ? `<div class="lineups">${['home','away'].map(side => `<div><div class="lineup-team">${crestMarkup(matchTeam(m,side,state.catalog.teams),m[side],'small')}<strong>${escape(m[side])}</strong></div><ul>${(m.lineups[side] || []).map(p => `<li>${escape(p.number)} · ${escape(p.name)}</li>`).join('')}</ul></div>`).join('')}</div>` : '<p>Alineación aún no publicada.</p>';
+  const lineup = m.lineups ? `<div class="lineups">${['home','away'].map(side => `<div><div class="lineup-team">${crestMarkup(matchBadge(m,side,state.catalog),m[side],'small')}<strong>${escape(m[side])}</strong></div><ul>${(m.lineups[side] || []).map(p => `<li>${escape(p.number)} · ${escape(p.name)}</li>`).join('')}</ul></div>`).join('')}</div>` : '<p>Alineación aún no publicada.</p>';
   const events = m.events?.length ? `<ul>${m.events.map(e => `<li>${escape(e.minute ?? '')} ${escape(e.type)} · ${escape(e.player || '')}</li>`).join('')}</ul>` : '<p>Goleadores, cambios y tarjetas sin publicar.</p>';
-  $('#detail-body').innerHTML = `<div class="detail-score"><p>${escape(m.competition)}</p><div class="score-row"><span class="team">${crestMarkup(matchTeam(m,'home',state.catalog.teams),m.home,'match-crest')}${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${crestMarkup(matchTeam(m,'away',state.catalog.teams),m.away,'match-crest')}${escape(m.away)}</span></div><p>${escape(labels[m.status])} · ${escape(dateLabel(m.date))}${m.time ? ` · ${escape(m.time)}` : ''}</p></div>
+  $('#detail-body').innerHTML = `<div class="detail-score"><p>${escape(m.competition)}</p><div class="score-row"><span class="team">${crestMarkup(matchBadge(m,'home',state.catalog),m.home,'match-crest')}${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${crestMarkup(matchBadge(m,'away',state.catalog),m.away,'match-crest')}${escape(m.away)}</span></div><p>${escape(labels[m.status])} · ${escape(dateLabel(m.date))}${m.time ? ` · ${escape(m.time)}` : ''}</p></div>
     <section class="detail-section"><h3>Resumen</h3><p>${escape(m.field || 'Campo sin publicar')}<br>${escape(updateLabel(m.updated_at))}<br>Descanso: ${m.halftime_score ? escape(m.halftime_score.join(' – ')) : 'Sin publicar'}</p>${!id.startsWith('demo-') ? `<a href="https://www.rfcylf.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=${encodeURIComponent(id)}&cod_acta=${encodeURIComponent(id)}" target="_blank" rel="noopener">Ver ficha en la RFCYLF ↗</a>` : '<p>Partido ficticio de demostración.</p>'}</section><section class="detail-section"><h3>Alineaciones</h3>${lineup}</section><section class="detail-section"><h3>Eventos del partido</h3>${events}</section>`;
   $('#detail').showModal();
 }
@@ -186,7 +194,7 @@ async function init() {
       saveSelection(); renderTeams();
     });
     $('#search').addEventListener('input', renderTeams);
-    $('#category').addEventListener('change', renderTeams);
+    $('#category').addEventListener('change', () => {updateCompetitionFilter();renderTeams();});
     $('#competition').addEventListener('change', renderTeams);
     $('#all-bierzo').addEventListener('click', () => {toggleGroup(state.catalog.teams.map(t => t.id), state.selected, true); saveSelection(); renderTeams();});
     $('#clear').addEventListener('click', () => {state.selected.clear();saveSelection();renderTeams();});

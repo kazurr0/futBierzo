@@ -12,6 +12,7 @@ from backend.store import Store, schedule_windows
 ROOT = Path(__file__).resolve().parents[1]
 WEB = ROOT / 'web'
 CATALOG = json.loads((ROOT / 'data/catalog.json').read_text(encoding='utf-8'))
+CATALOG['clubs'] = json.loads((ROOT / 'data/clubs.json').read_text(encoding='utf-8'))
 
 
 def make_handler(store):

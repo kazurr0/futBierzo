@@ -15,3 +15,8 @@ export function normalize(text) {
 export function pending(match) {
   return match.status === 'scheduled' && (!match.date || !match.time);
 }
+
+export function competitionsForCategory(teams, category) {
+  return [...new Set(teams.filter(team => !category || team.category === category).map(team => team.competition))]
+    .sort((a,b) => a.localeCompare(b,'es',{numeric:true}));
+}
