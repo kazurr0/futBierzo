@@ -1,5 +1,9 @@
 import json
 import unittest
+import tempfile
+from unittest.mock import patch
+from backend.store import Store
+from backend.rfcylf import main
 from datetime import date
 from pathlib import Path
 from backend.rfcylf import parse_schedule
@@ -33,6 +37,20 @@ class ScheduleTests(unittest.TestCase):
             self.parse(self.html.replace('Total 13 Registros','Total 14 Registros'))
         with self.assertRaises(ValueError):
             self.parse('<html>Acceso no disponible</html>')
+    def test_successful_query_survives_a_later_club_failure(self):
+        records = self.parse()
+        def interrupted(*args, **kwargs):
+            kwargs['on_result']('4006',date(2026,10,1),date(2026,10,7),records)
+            raise RuntimeError('Next club unavailable')
+        with tempfile.TemporaryDirectory() as folder:
+            db = Path(folder)/'matches.sqlite'
+            with patch('sys.argv',['collector','--today','2026-10-01','--db',str(db)]), patch('backend.rfcylf.collect_schedules',side_effect=interrupted):
+                with self.assertRaises(SystemExit):
+                    main()
+            store = Store(db)
+            self.assertEqual(len(store.matches('2026-10-01','2026-10-07')),13)
+            self.assertEqual(json.loads(store.metadata('schedule_coverage'))[0]['club_id'],'4006')
+
     def test_explicit_zero_is_valid_and_wrong_date_is_rejected(self):
         self.assertEqual(self.parse('<html>Total 0 Registros</html>'),[])
         with self.assertRaises(ValueError):
