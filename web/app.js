@@ -42,6 +42,17 @@ function updateCompetitionFilter() {
   $('#competition').value = values.includes(selected) ? selected : '';
 }
 
+function setTeamMode(mode) {
+  state.mode = mode;
+  document.querySelectorAll('.tabs [data-mode]').forEach(button =>
+    button.classList.toggle('active', button.dataset.mode === mode));
+}
+
+function browseFilteredTeams() {
+  if ($('#category').value || $('#competition').value) setTeamMode('category');
+  renderTeams();
+}
+
 function renderTeams() {
   const term = normalize($('#search').value.trim());
   const category = $('#category').value, competition = $('#competition').value;
@@ -66,10 +77,11 @@ function renderTeams() {
     state.groups.set(groupId, entries.map(t => t.id));
     const selection = selectionState(entries.map(t => t.id), state.selected);
     const title = state.mode === 'category' ? key : entries[0].club_name;
-    const open = state.expanded.has(scope) || term || state.mode === 'selected';
+    const open = state.expanded.has(scope) || term || state.mode === 'selected' ||
+      (state.mode === 'category' && (category || competition));
     return `<details class="club-card" data-scope="${escape(scope)}" ${open ? 'open' : ''}>
       <summary>${crestMarkup(state.mode === 'category' ? null : entries[0], title)}<span class="club-title"><strong>${escape(title)}</strong><small>${entries.length} equipos · ${selection.count} seleccionados</small></span><span class="chevron">⌄</span></summary>
-      <label class="all-row"><input type="checkbox" data-group="${groupId}" ${selection.checked ? 'checked' : ''} aria-label="Seleccionar los equipos visibles de ${escape(title)}"><span>${category || competition || term || state.mode === 'selected' ? 'Todos los equipos visibles' : 'Todos sus equipos'}</span></label>
+      <label class="all-row"><input type="checkbox" data-group="${groupId}" ${selection.checked ? 'checked' : ''} aria-label="Seleccionar los equipos visibles de ${escape(title)}"><span>${state.mode === 'category' && !term ? 'Seleccionar toda la liga · equipos del Bierzo' : category || competition || term || state.mode === 'selected' ? 'Todos los equipos visibles' : 'Todos sus equipos'}</span></label>
       ${entries.map(t => `<label class="team-row ${state.selected.has(t.id) ? 'selected' : ''}"><input type="checkbox" data-team="${t.id}" ${state.selected.has(t.id) ? 'checked' : ''}>${crestMarkup(t,t.name,'small')}<span>${escape(t.name)}<small>${escape(t.competition)} · ${escape(t.field || 'Campo sin publicar')}</small></span></label>`).join('')}
     </details>`;
   });
@@ -181,7 +193,7 @@ async function init() {
       const view = event.target.closest('[data-view]');
       if (view) changeView(view.dataset.view);
       const mode = event.target.closest('[data-mode]');
-      if (mode) {state.mode = mode.dataset.mode; document.querySelectorAll('[data-mode]').forEach(b => b.classList.toggle('active', b === mode)); renderTeams();}
+      if (mode) {setTeamMode(mode.dataset.mode); renderTeams();}
       const filter = event.target.closest('[data-filter]');
       if (filter) {state.filter = filter.dataset.filter; document.querySelectorAll('[data-filter]').forEach(b => b.classList.toggle('active', b === filter)); renderMatches();}
       const match = event.target.closest('[data-match]');
@@ -194,8 +206,8 @@ async function init() {
       saveSelection(); renderTeams();
     });
     $('#search').addEventListener('input', renderTeams);
-    $('#category').addEventListener('change', () => {updateCompetitionFilter();renderTeams();});
-    $('#competition').addEventListener('change', renderTeams);
+    $('#category').addEventListener('change', () => {updateCompetitionFilter();browseFilteredTeams();});
+    $('#competition').addEventListener('change', browseFilteredTeams);
     $('#all-bierzo').addEventListener('click', () => {toggleGroup(state.catalog.teams.map(t => t.id), state.selected, true); saveSelection(); renderTeams();});
     $('#clear').addEventListener('click', () => {state.selected.clear();saveSelection();renderTeams();});
     $('#go-agenda').addEventListener('click', () => changeView('agenda'));
