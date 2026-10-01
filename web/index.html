@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#850029"><meta name="description" content="Equipos y partidos del fútbol del Bierzo">
+  <title>futBierzo · Nuestro fútbol</title>
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css"><script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="masthead"><a class="brand" href="/" aria-label="futBierzo, inicio"><span class="brand-icon">fB</span><span>fut<strong>Bierzo</strong><small>Nuestro fútbol. Sus partidos.</small></span></a><span class="region">EL BIERZO <span class="dot"></span></span></header>
+  <main>
+    <div id="notice" role="status" class="notice" hidden></div>
+    <section class="hero"><div><p class="eyebrow">TU FÚTBOL, MÁS CERCA</p><h1 id="heading">Elige a quién seguir.</h1><p id="subtitle">Un club entero, una categoría o tus equipos favoritos.</p></div><div class="hero-mark" aria-hidden="true">fB<span>DESDE LA GRADA</span></div></section>
+    <nav class="main-nav" aria-label="Secciones"><button data-view="teams" class="active">Mis equipos <span id="selection-count">0</span></button><button data-view="agenda">Horarios</button><button data-view="live">En directo <span class="live-dot"></span></button></nav>
+    <section id="teams-view">
+      <div class="toolbar"><div class="tabs" role="group" aria-label="Modo de selección"><button data-mode="club" class="active">Por club</button><button data-mode="category">Por categoría</button><button data-mode="selected">Favoritos</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar club o equipo…" aria-label="Buscar club o equipo"></label></div>
+      <div class="filters"><label>Categoría <select id="category"><option value="">Todas las categorías</option></select></label><label>Competición <select id="competition"><option value="">Todas las competiciones</option></select></label><button id="all-bierzo" class="outline">Seguir todo el Bierzo</button><button id="clear" class="text-button">Quitar selección</button></div>
+      <div class="section-line"><h2 id="list-title">Clubes del Bierzo</h2><span id="catalog-count"></span></div>
+      <div id="team-list" class="club-grid"></div>
+      <div class="selection-bar"><div><strong id="selection-summary">Sin equipos seleccionados</strong><small>Tu selección se guarda en este dispositivo.</small></div><button id="go-agenda" class="primary">Ver sus partidos <span>→</span></button></div>
+    </section>
+    <section id="matches-view" hidden>
+      <div class="toolbar"><div class="tabs" id="match-tabs"><button data-filter="all" class="active">Todos</button><button data-filter="pending">Pendientes</button><button data-filter="final">Finalizados</button></div><label class="demo-toggle"><input id="demo" type="checkbox"> Ver demostración</label></div>
+      <div class="match-context"><span id="date-range"></span><label><input id="only-mine" type="checkbox" checked> Solo mis equipos</label><button id="refresh" class="outline">Actualizar</button></div>
+      <p id="feed-note" class="feed-note"></p><div id="match-list" class="match-grid"></div>
+    </section>
+    <footer class="page-footer"><span>futBierzo · Fútbol de nuestra tierra</span><span>Fuente del catálogo: RFCYLF · Proyecto independiente</span></footer>
+  </main>
+  <dialog id="detail"><div class="dialog-top"><span>Detalle del partido</span><button id="close-detail" aria-label="Cerrar detalle">✕</button></div><div id="detail-body"></div></dialog>
+</body>
+</html>

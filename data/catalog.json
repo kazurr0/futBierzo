@@ -1,0 +1,1946 @@
+{
+  "source": "RFCYLF · Catálogo del monitor existente",
+  "snapshot_at": "2026-09-21T09:00:31.477752+00:00",
+  "teams": [
+    {
+      "id": "16524",
+      "club_id": "4002",
+      "club_name": "Unión Cacabelense",
+      "name": "Unión Cacabelense",
+      "category": "Aficionados",
+      "competition": "2ª División Provincial de Aficionados",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16524"
+    },
+    {
+      "id": "15611",
+      "club_id": "4002",
+      "club_name": "Unión Cacabelense",
+      "name": "Unión Cacabelense",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15611"
+    },
+    {
+      "id": "24217494",
+      "club_id": "4002",
+      "club_name": "Unión Cacabelense",
+      "name": "Unión Cacabelense",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217494"
+    },
+    {
+      "id": "13577",
+      "club_id": "4002",
+      "club_name": "Unión Cacabelense",
+      "name": "Unión Cacabelense",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13577"
+    },
+    {
+      "id": "14658",
+      "club_id": "4002",
+      "club_name": "Unión Cacabelense",
+      "name": "Unión Cacabelense",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14658"
+    },
+    {
+      "id": "24765957",
+      "club_id": "4002",
+      "club_name": "Unión Cacabelense",
+      "name": "Unión Cacabelense",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Prebenjamines",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24765957"
+    },
+    {
+      "id": "16251",
+      "club_id": "4002",
+      "club_name": "Unión Cacabelense",
+      "name": "Unión Cacabelense",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16251"
+    },
+    {
+      "id": "4471",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D.",
+      "category": "Primera Federación",
+      "competition": "Primera Federación",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=4471"
+    },
+    {
+      "id": "4474",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D.",
+      "category": "Liga Nacional Juvenil",
+      "competition": "Liga Nacional Juvenil",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=4474"
+    },
+    {
+      "id": "13366",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D. \"B\"",
+      "category": "Aficionados",
+      "competition": "1ª División Regional de Aficionados",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13366"
+    },
+    {
+      "id": "10005",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D. \"B\"",
+      "category": "Juveniles",
+      "competition": "1ª División Provincial de Juveniles",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10005"
+    },
+    {
+      "id": "10004",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D.",
+      "category": "Cadetes",
+      "competition": "2ª División Regional de Cadetes",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10004"
+    },
+    {
+      "id": "10008",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D. \"B\"",
+      "category": "Cadetes",
+      "competition": "1ª División Provincial de Cadetes",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10008"
+    },
+    {
+      "id": "10007",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D.",
+      "category": "Infantiles",
+      "competition": "1ª División Regional de Infantiles",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10007"
+    },
+    {
+      "id": "10006",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D. \"B\"",
+      "category": "Infantiles",
+      "competition": "2ª División Regional de Infantiles",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10006"
+    },
+    {
+      "id": "13703",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D.",
+      "category": "Alevines",
+      "competition": "1ª División Provincial de Alevines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13703"
+    },
+    {
+      "id": "13702",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D. \"B\"",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13702"
+    },
+    {
+      "id": "14562",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D.",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Benjamines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14562"
+    },
+    {
+      "id": "14564",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D. \"B\"",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14564"
+    },
+    {
+      "id": "14893",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D.",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14893"
+    },
+    {
+      "id": "10081478",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D. \"B\"",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Prebenjamines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10081478"
+    },
+    {
+      "id": "16535",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D.",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16535"
+    },
+    {
+      "id": "10022139",
+      "club_id": "4003",
+      "club_name": "S.D. Ponferradina S.A.D.",
+      "name": "S.D. Ponferradina S.A.D. +",
+      "category": "+Que Goles",
+      "competition": "+Que Goles",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10022139"
+    },
+    {
+      "id": "4656",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre",
+      "category": "Tercera Federación",
+      "competition": "Tercera Federación",
+      "field": "C.M. Jesús Esteban Rodríguez 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=4656"
+    },
+    {
+      "id": "12185",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre",
+      "category": "Juveniles",
+      "competition": "1ª División Regional de Juveniles",
+      "field": "E.M. La Devesa",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=12185"
+    },
+    {
+      "id": "11378376",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre \"B\"",
+      "category": "Juveniles",
+      "competition": "2ª División Provincial de Juveniles",
+      "field": "C.M. Jesús Esteban Rodríguez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11378376"
+    },
+    {
+      "id": "8552",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre",
+      "category": "Cadetes",
+      "competition": "2ª División Provincial de Cadetes",
+      "field": "C.M. Jesús Esteban Rodríguez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8552"
+    },
+    {
+      "id": "24217322",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre \"B\"",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217322"
+    },
+    {
+      "id": "8550",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre",
+      "category": "Infantiles",
+      "competition": "2ª División Provincial de Infantiles",
+      "field": "C.M. Jesús Esteban Rodríguez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8550"
+    },
+    {
+      "id": "11378378",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre \"B\"",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Jesús Esteban Rodríguez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11378378"
+    },
+    {
+      "id": "13826",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Jesús Esteban Rodríguez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13826"
+    },
+    {
+      "id": "13825",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre \"B\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Jesús Esteban Rodríguez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13825"
+    },
+    {
+      "id": "14664",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Jesús Esteban Rodríguez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14664"
+    },
+    {
+      "id": "14660",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre \"B\"",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Jesús Esteban Rodríguez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14660"
+    },
+    {
+      "id": "14894",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Jesús Esteban Rodríguez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14894"
+    },
+    {
+      "id": "16589",
+      "club_id": "4006",
+      "club_name": "Atlético Bembibre",
+      "name": "Atlético Bembibre",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16589"
+    },
+    {
+      "id": "8482",
+      "club_id": "4007",
+      "club_name": "C.D. Fabero",
+      "name": "C.D. Fabero",
+      "category": "Aficionados",
+      "competition": "1ª División Provincial de Aficionados",
+      "field": "C.M. Fabero",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8482"
+    },
+    {
+      "id": "8480",
+      "club_id": "4007",
+      "club_name": "C.D. Fabero",
+      "name": "C.D. Fabero",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. Fabero",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8480"
+    },
+    {
+      "id": "10081256",
+      "club_id": "4007",
+      "club_name": "C.D. Fabero",
+      "name": "C.D. Fabero",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. Fabero",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10081256"
+    },
+    {
+      "id": "15348",
+      "club_id": "4007",
+      "club_name": "C.D. Fabero",
+      "name": "C.D. Fabero",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Fabero",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15348"
+    },
+    {
+      "id": "13927",
+      "club_id": "4007",
+      "club_name": "C.D. Fabero",
+      "name": "C.D. Fabero",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Fabero",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13927"
+    },
+    {
+      "id": "24217684",
+      "club_id": "4007",
+      "club_name": "C.D. Fabero",
+      "name": "C.D. Fabero",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Fabero",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217684"
+    },
+    {
+      "id": "12342",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil",
+      "category": "Juveniles",
+      "competition": "1ª División Provincial de Juveniles",
+      "field": "C.M. Flores del Sil 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=12342"
+    },
+    {
+      "id": "8474",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil",
+      "category": "Cadetes",
+      "competition": "2ª División Provincial de Cadetes",
+      "field": "C.M. Flores del Sil 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8474"
+    },
+    {
+      "id": "24217255",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"B\"",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217255"
+    },
+    {
+      "id": "14896",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil",
+      "category": "Infantiles",
+      "competition": "1ª División Provincial de Infantiles",
+      "field": "C.M. Flores del Sil 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14896"
+    },
+    {
+      "id": "10082229",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"B\"",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Flores del Sil 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10082229"
+    },
+    {
+      "id": "13926",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil",
+      "category": "Alevines",
+      "competition": "1ª División Provincial de Alevines",
+      "field": "C.M. Flores del Sil 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13926"
+    },
+    {
+      "id": "16653",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"B\"",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Flores del Sil 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16653"
+    },
+    {
+      "id": "65349",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"C\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Flores del Sil 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=65349"
+    },
+    {
+      "id": "15615",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Benjamines",
+      "field": "C.M. Flores del Sil 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15615"
+    },
+    {
+      "id": "16766",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"B\"",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Flores del Sil 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16766"
+    },
+    {
+      "id": "24217256",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"C\"",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217256"
+    },
+    {
+      "id": "17123",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Flores del Sil 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=17123"
+    },
+    {
+      "id": "16790",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"B\"",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Prebenjamines",
+      "field": "C.M. Flores del Sil 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16790"
+    },
+    {
+      "id": "16705",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16705"
+    },
+    {
+      "id": "16260",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"B\"",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16260"
+    },
+    {
+      "id": "10056248",
+      "club_id": "4009",
+      "club_name": "C.D. Flores del Sil",
+      "name": "C.D. Flores del Sil \"C\"",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10056248"
+    },
+    {
+      "id": "8485",
+      "club_id": "4014",
+      "club_name": "C.D. Toreno",
+      "name": "C.D. Toreno",
+      "category": "Aficionados",
+      "competition": "1ª División Provincial de Aficionados",
+      "field": "C.M. El Campón",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8485"
+    },
+    {
+      "id": "24217629",
+      "club_id": "4014",
+      "club_name": "C.D. Toreno",
+      "name": "C.D. Toreno",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. El Campón",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217629"
+    },
+    {
+      "id": "24217639",
+      "club_id": "4014",
+      "club_name": "C.D. Toreno",
+      "name": "C.D. Toreno",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. El Campón",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217639"
+    },
+    {
+      "id": "10737313",
+      "club_id": "4014",
+      "club_name": "C.D. Toreno",
+      "name": "C.D. Toreno",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. El Campón",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10737313"
+    },
+    {
+      "id": "9954",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta",
+      "category": "Juveniles",
+      "competition": "2ª División Provincial de Juveniles",
+      "field": "Campus Universitario 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9954"
+    },
+    {
+      "id": "9956",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "Campus Universitario 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9956"
+    },
+    {
+      "id": "24217268",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta \"B\"",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "Campus Universitario 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217268"
+    },
+    {
+      "id": "9955",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "Campus Universitario 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9955"
+    },
+    {
+      "id": "13816",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "Campus Universitario 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13816"
+    },
+    {
+      "id": "22910273",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta \"B\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "Campus Universitario 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910273"
+    },
+    {
+      "id": "14656",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "Campus Universitario 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14656"
+    },
+    {
+      "id": "10081459",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta \"B\"",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "Campus Universitario 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10081459"
+    },
+    {
+      "id": "24902278",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta \"C\"",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "Campus Universitario 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24902278"
+    },
+    {
+      "id": "14899",
+      "club_id": "4035",
+      "club_name": "C.D. Santa Marta",
+      "name": "C.D. Santa Marta",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "Campus Universitario 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14899"
+    },
+    {
+      "id": "22910276",
+      "club_id": "4051",
+      "club_name": "C.D. San Ignacio",
+      "name": "C.D. San Ignacio",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Ramón Martínez 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910276"
+    },
+    {
+      "id": "13929",
+      "club_id": "4051",
+      "club_name": "C.D. San Ignacio",
+      "name": "C.D. San Ignacio",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Ramón Martínez 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13929"
+    },
+    {
+      "id": "15353",
+      "club_id": "4051",
+      "club_name": "C.D. San Ignacio",
+      "name": "C.D. San Ignacio",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Ramón Martínez 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15353"
+    },
+    {
+      "id": "24216920",
+      "club_id": "4084",
+      "club_name": "Sparta Villafranquino",
+      "name": "Sparta Villafranquino",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. La Edrada",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24216920"
+    },
+    {
+      "id": "11378451",
+      "club_id": "4084",
+      "club_name": "Sparta Villafranquino",
+      "name": "Sparta Villafranquino",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. La Ruquela",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11378451"
+    },
+    {
+      "id": "13323",
+      "club_id": "4084",
+      "club_name": "Sparta Villafranquino",
+      "name": "Sparta Villafranquino",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. La Ruquela",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13323"
+    },
+    {
+      "id": "16470",
+      "club_id": "4084",
+      "club_name": "Sparta Villafranquino",
+      "name": "Sparta Villafranquino",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. La Ruquela",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16470"
+    },
+    {
+      "id": "14646",
+      "club_id": "4084",
+      "club_name": "Sparta Villafranquino",
+      "name": "Sparta Villafranquino",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. La Ruquela",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14646"
+    },
+    {
+      "id": "16574",
+      "club_id": "4093",
+      "club_name": "C.D.F. Cubillos",
+      "name": "C.D.F. Cubillos",
+      "category": "Aficionados",
+      "competition": "1ª División Regional de Aficionados",
+      "field": "C.M. La Era José Luis Novo",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16574"
+    },
+    {
+      "id": "22910387",
+      "club_id": "4093",
+      "club_name": "C.D.F. Cubillos",
+      "name": "C.D.F. Cubillos",
+      "category": "Juveniles",
+      "competition": "2ª División Provincial de Juveniles",
+      "field": "C.M. La Era José Luis Novo",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910387"
+    },
+    {
+      "id": "24902254",
+      "club_id": "4093",
+      "club_name": "C.D.F. Cubillos",
+      "name": "C.D.F. Cubillos",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. La Era José Luis Novo",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24902254"
+    },
+    {
+      "id": "8500",
+      "club_id": "4099",
+      "club_name": "C.D. Laciana",
+      "name": "C.D. Laciana",
+      "category": "Aficionados",
+      "competition": "1ª División Provincial de Aficionados",
+      "field": "C.M. Villablino",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8500"
+    },
+    {
+      "id": "12629",
+      "club_id": "4099",
+      "club_name": "C.D. Laciana",
+      "name": "C.D. Laciana",
+      "category": "Cadetes",
+      "competition": "2ª División Provincial de Cadetes",
+      "field": "C.M. Villablino",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=12629"
+    },
+    {
+      "id": "8497",
+      "club_id": "4099",
+      "club_name": "C.D. Laciana",
+      "name": "C.D. Laciana",
+      "category": "Infantiles",
+      "competition": "2ª División Provincial de Infantiles",
+      "field": "C.M. Villablino",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8497"
+    },
+    {
+      "id": "11378450",
+      "club_id": "4099",
+      "club_name": "C.D. Laciana",
+      "name": "C.D. Laciana",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Villablino",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11378450"
+    },
+    {
+      "id": "24217459",
+      "club_id": "4099",
+      "club_name": "C.D. Laciana",
+      "name": "C.D. Laciana",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Villablino",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217459"
+    },
+    {
+      "id": "10475565",
+      "club_id": "4099",
+      "club_name": "C.D. Laciana",
+      "name": "C.D. Laciana",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Villablino",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10475565"
+    },
+    {
+      "id": "65622",
+      "club_id": "4099",
+      "club_name": "C.D. Laciana",
+      "name": "C.D. Laciana",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=65622"
+    },
+    {
+      "id": "8639",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi",
+      "category": "Juveniles",
+      "competition": "2ª División Provincial de Juveniles",
+      "field": "C.M. Ramón Martínez 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8639"
+    },
+    {
+      "id": "12648",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi",
+      "category": "Cadetes",
+      "competition": "1ª División Provincial de Cadetes",
+      "field": "C.M. Ramón Martínez 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=12648"
+    },
+    {
+      "id": "8640",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi",
+      "category": "Infantiles",
+      "competition": "2ª División Provincial de Infantiles",
+      "field": "C.M. Ramón Martínez 3",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8640"
+    },
+    {
+      "id": "13720",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Ramón Martínez 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13720"
+    },
+    {
+      "id": "13719",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi \"B\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Ramón Martínez 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13719"
+    },
+    {
+      "id": "14579",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Benjamines",
+      "field": "C.M. Ramón Martínez 3.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14579"
+    },
+    {
+      "id": "14578",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi \"B\"",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Ramón Martínez 3.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14578"
+    },
+    {
+      "id": "15092",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Ramón Martínez 3.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15092"
+    },
+    {
+      "id": "16221",
+      "club_id": "4116",
+      "club_name": "C.D. La Morenica Aldebi",
+      "name": "C.D. La Morenica Aldebi",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16221"
+    },
+    {
+      "id": "8507",
+      "club_id": "4129",
+      "club_name": "C.D. Arenas de Vega de Espinareda",
+      "name": "C.D. Arenas de Vega de Espinareda",
+      "category": "Aficionados",
+      "competition": "1ª División Provincial de Aficionados",
+      "field": "C.M. Luis del Olmo",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8507"
+    },
+    {
+      "id": "24217648",
+      "club_id": "4129",
+      "club_name": "C.D. Arenas de Vega de Espinareda",
+      "name": "C.D. Arenas de Vega de Espinareda",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Luis del Olmo 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217648"
+    },
+    {
+      "id": "8562",
+      "club_id": "4141",
+      "club_name": "C.D. Toralense",
+      "name": "C.D. Toralense",
+      "category": "Aficionados",
+      "competition": "1ª División Provincial de Aficionados",
+      "field": "C.M. La Mata",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8562"
+    },
+    {
+      "id": "8700",
+      "club_id": "4177",
+      "club_name": "C.D. Berciano-Villadepalos",
+      "name": "C.D. Berciano-Villadepalos",
+      "category": "Aficionados",
+      "competition": "2ª División Provincial de Aficionados",
+      "field": "C.M. La Barca",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8700"
+    },
+    {
+      "id": "7724",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "Aficionados",
+      "competition": "1ª División Provincial de Aficionados",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=7724"
+    },
+    {
+      "id": "7722",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=7722"
+    },
+    {
+      "id": "7723",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=7723"
+    },
+    {
+      "id": "7721",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=7721"
+    },
+    {
+      "id": "14902",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14902"
+    },
+    {
+      "id": "11377169",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia \"B\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11377169"
+    },
+    {
+      "id": "14489",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14489"
+    },
+    {
+      "id": "16794",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16794"
+    },
+    {
+      "id": "16581",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16581"
+    },
+    {
+      "id": "24191664",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia \"B\"",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24191664"
+    },
+    {
+      "id": "24217604",
+      "club_id": "4178",
+      "club_name": "C.D. Naraya de Halterofilia",
+      "name": "C.D. Naraya de Halterofilia",
+      "category": "1ª División Provincial Infantil/Alevín Femenina",
+      "competition": "1ª División Provincial Infantil/Alevín Femenina",
+      "field": "C.M. Camponaraya",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217604"
+    },
+    {
+      "id": "8510",
+      "club_id": "4190",
+      "club_name": "C.D. Columbrianos",
+      "name": "C.D. Columbrianos",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. Las Eras de Columbrianos 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8510"
+    },
+    {
+      "id": "12812",
+      "club_id": "4190",
+      "club_name": "C.D. Columbrianos",
+      "name": "C.D. Columbrianos",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Las Eras de Columbrianos 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=12812"
+    },
+    {
+      "id": "13707",
+      "club_id": "4190",
+      "club_name": "C.D. Columbrianos",
+      "name": "C.D. Columbrianos",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Las Eras de Columbrianos 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13707"
+    },
+    {
+      "id": "10082259",
+      "club_id": "4190",
+      "club_name": "C.D. Columbrianos",
+      "name": "C.D. Columbrianos \"B\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Las Eras de Columbrianos 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10082259"
+    },
+    {
+      "id": "14565",
+      "club_id": "4190",
+      "club_name": "C.D. Columbrianos",
+      "name": "C.D. Columbrianos",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Las Eras de Columbrianos 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14565"
+    },
+    {
+      "id": "14903",
+      "club_id": "4190",
+      "club_name": "C.D. Columbrianos",
+      "name": "C.D. Columbrianos",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Las Eras de Columbrianos 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14903"
+    },
+    {
+      "id": "10082205",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos",
+      "category": "Aficionados",
+      "competition": "2ª División Provincial de Aficionados",
+      "field": "C.M. Cuatrovientos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10082205"
+    },
+    {
+      "id": "12307",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos",
+      "category": "Juveniles",
+      "competition": "1ª División Provincial de Juveniles",
+      "field": "C.M. Cuatrovientos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=12307"
+    },
+    {
+      "id": "15365",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"B\"",
+      "category": "Juveniles",
+      "competition": "2ª División Provincial de Juveniles",
+      "field": "C.M. Cuatrovientos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15365"
+    },
+    {
+      "id": "9192",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos",
+      "category": "Cadetes",
+      "competition": "1ª División Provincial de Cadetes",
+      "field": "C.M. Cuatrovientos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9192"
+    },
+    {
+      "id": "9191",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"B\"",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. Cuatrovientos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9191"
+    },
+    {
+      "id": "9190",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos",
+      "category": "Infantiles",
+      "competition": "1ª División Provincial de Infantiles",
+      "field": "C.M. Cuatrovientos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9190"
+    },
+    {
+      "id": "9188",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"B\"",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Cuatrovientos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9188"
+    },
+    {
+      "id": "13715",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos",
+      "category": "Alevines",
+      "competition": "1ª División Provincial de Alevines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13715"
+    },
+    {
+      "id": "13737",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"B\"",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13737"
+    },
+    {
+      "id": "22909878",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"C\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22909878"
+    },
+    {
+      "id": "24217592",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"D\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Cuatrovientos 1.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217592"
+    },
+    {
+      "id": "14573",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Benjamines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14573"
+    },
+    {
+      "id": "14590",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"B\"",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14590"
+    },
+    {
+      "id": "10081306",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"C\"",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10081306"
+    },
+    {
+      "id": "14904",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14904"
+    },
+    {
+      "id": "16054",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"B\"",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Prebenjamines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16054"
+    },
+    {
+      "id": "24217593",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"C\"",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Prebenjamines",
+      "field": "C.M. Cuatrovientos 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217593"
+    },
+    {
+      "id": "16622",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16622"
+    },
+    {
+      "id": "16781",
+      "club_id": "4213",
+      "club_name": "C.D. Cuatrovientos",
+      "name": "C.D. Cuatrovientos \"B\"",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16781"
+    },
+    {
+      "id": "8743",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. La Barca",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8743"
+    },
+    {
+      "id": "8744",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo",
+      "category": "Cadetes",
+      "competition": "2ª División Provincial de Cadetes",
+      "field": "C.M. El Soto",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8744"
+    },
+    {
+      "id": "8566",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. El Soto",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8566"
+    },
+    {
+      "id": "13819",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. El Soto",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13819"
+    },
+    {
+      "id": "16690",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo \"B\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. El Soto",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16690"
+    },
+    {
+      "id": "14666",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. El Soto",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14666"
+    },
+    {
+      "id": "14905",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. El Soto",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14905"
+    },
+    {
+      "id": "10025291",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10025291"
+    },
+    {
+      "id": "22910341",
+      "club_id": "4234",
+      "club_name": "C.D.F. Atlético Bierzo",
+      "name": "C.D.F. Atlético Bierzo",
+      "category": "2ª División Regional Juvenil/Cadete Femenina",
+      "competition": "2ª División Regional Juvenil/Cadete Femenina",
+      "field": "C.M. El Soto",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910341"
+    },
+    {
+      "id": "5232",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol",
+      "category": "Tercera Federación de Fútbol Femenino",
+      "competition": "Tercera Federación de Fútbol Femenino",
+      "field": "C.M. Ramón Martínez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=5232"
+    },
+    {
+      "id": "24217095",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Ramón Martínez 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217095"
+    },
+    {
+      "id": "14556",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Ramón Martínez 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14556"
+    },
+    {
+      "id": "22910460",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Ramón Martínez 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910460"
+    },
+    {
+      "id": "11377293",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol",
+      "category": "1ª División Regional Juvenil/Cadete Femenina",
+      "competition": "1ª División Regional Juvenil/Cadete Femenina",
+      "field": "C.M. Ramón Martínez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11377293"
+    },
+    {
+      "id": "24217094",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol \"B\"",
+      "category": "2ª División Regional Juvenil/Cadete Femenina",
+      "competition": "2ª División Regional Juvenil/Cadete Femenina",
+      "field": "C.M. Ramón Martínez 3",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217094"
+    },
+    {
+      "id": "22910455",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol",
+      "category": "1ª División Provincial Infantil/Alevín Femenina",
+      "competition": "1ª División Provincial Infantil/Alevín Femenina",
+      "field": "C.M. Ramón Martínez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910455"
+    },
+    {
+      "id": "22910456",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol \"B\"",
+      "category": "1ª División Provincial Infantil/Alevín Femenina",
+      "competition": "1ª División Provincial Infantil/Alevín Femenina",
+      "field": "C.M. Ramón Martínez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910456"
+    },
+    {
+      "id": "22910457",
+      "club_id": "4269",
+      "club_name": "C.D. Ponferrada Fútbol",
+      "name": "C.D. Ponferrada Fútbol \"C\"",
+      "category": "1ª División Provincial Infantil/Alevín Femenina",
+      "competition": "1ª División Provincial Infantil/Alevín Femenina",
+      "field": "C.M. Ramón Martínez 3",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910457"
+    },
+    {
+      "id": "11378289",
+      "club_id": "4289",
+      "club_name": "C.D. Ponferrada City",
+      "name": "C.D. Ponferrada City",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. Ramón Martínez 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11378289"
+    },
+    {
+      "id": "13322",
+      "club_id": "4289",
+      "club_name": "C.D. Ponferrada City",
+      "name": "C.D. Ponferrada City",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Ramón Martínez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13322"
+    },
+    {
+      "id": "14513",
+      "club_id": "4289",
+      "club_name": "C.D. Ponferrada City",
+      "name": "C.D. Ponferrada City",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Ramón Martínez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14513"
+    },
+    {
+      "id": "15095",
+      "club_id": "4289",
+      "club_name": "C.D. Ponferrada City",
+      "name": "C.D. Ponferrada City",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Ramón Martínez 2.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15095"
+    },
+    {
+      "id": "24217011",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. Ramón Martínez 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217011"
+    },
+    {
+      "id": "24217010",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. Ramón Martínez 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217010"
+    },
+    {
+      "id": "12341",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario",
+      "category": "Infantiles",
+      "competition": "2ª División Provincial de Infantiles",
+      "field": "C.M. Ramón Martínez 3",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=12341"
+    },
+    {
+      "id": "22910390",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario \"B\"",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Ramón Martínez 3",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910390"
+    },
+    {
+      "id": "13590",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario",
+      "category": "Alevines",
+      "competition": "2ª División Provincial de Alevines",
+      "field": "C.M. Ramón Martínez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13590"
+    },
+    {
+      "id": "9092802",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario \"B\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Ramón Martínez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9092802"
+    },
+    {
+      "id": "14493",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Ramón Martínez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14493"
+    },
+    {
+      "id": "14909",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Ramón Martínez 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14909"
+    },
+    {
+      "id": "10025290",
+      "club_id": "4290",
+      "club_name": "Atlético Templario",
+      "name": "Atlético Templario",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10025290"
+    },
+    {
+      "id": "65605",
+      "club_id": "4302",
+      "club_name": "C.D. Ponfesala",
+      "name": "C.D. Ponfesala",
+      "category": "Tercera División de Fútbol Sala",
+      "competition": "Tercera División de Fútbol Sala",
+      "field": "P.M. Lidia Valentín",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=65605"
+    },
+    {
+      "id": "10687793",
+      "club_id": "4302",
+      "club_name": "C.D. Ponfesala",
+      "name": "C.D. Ponfesala",
+      "category": "Aficionados",
+      "competition": "1ª División Provincial de Aficionados Femenina de Fútbol Sala",
+      "field": "P.M. José Arroyo",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10687793"
+    },
+    {
+      "id": "24217611",
+      "club_id": "4304",
+      "club_name": "C.D. Santa Ana Cabañas Raras",
+      "name": "C.D. Santa Ana Cabañas Raras",
+      "category": "Aficionados",
+      "competition": "2ª División Provincial de Aficionados",
+      "field": "C.M. Las Eras de Columbrianos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217611"
+    },
+    {
+      "id": "11376984",
+      "club_id": "4304",
+      "club_name": "C.D. Santa Ana Cabañas Raras",
+      "name": "C.D. Santa Ana Cabañas Raras",
+      "category": "Juveniles",
+      "competition": "3ª División Provincial de Juveniles",
+      "field": "C.M. Las Eras de Columbrianos 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11376984"
+    },
+    {
+      "id": "11376985",
+      "club_id": "4304",
+      "club_name": "C.D. Santa Ana Cabañas Raras",
+      "name": "C.D. Santa Ana Cabañas Raras",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. Las Eras de Columbrianos 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11376985"
+    },
+    {
+      "id": "10082067",
+      "club_id": "4304",
+      "club_name": "C.D. Santa Ana Cabañas Raras",
+      "name": "C.D. Santa Ana Cabañas Raras",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Las Eras de Columbrianos 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10082067"
+    },
+    {
+      "id": "11376986",
+      "club_id": "4304",
+      "club_name": "C.D. Santa Ana Cabañas Raras",
+      "name": "C.D. Santa Ana Cabañas Raras",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Las Eras de Columbrianos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11376986"
+    },
+    {
+      "id": "22909959",
+      "club_id": "4304",
+      "club_name": "C.D. Santa Ana Cabañas Raras",
+      "name": "C.D. Santa Ana Cabañas Raras",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Las Eras de Columbrianos",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22909959"
+    },
+    {
+      "id": "22909958",
+      "club_id": "4304",
+      "club_name": "C.D. Santa Ana Cabañas Raras",
+      "name": "C.D. Santa Ana Cabañas Raras",
+      "category": "2ª División Regional Juvenil/Cadete Femenina",
+      "competition": "2ª División Regional Juvenil/Cadete Femenina",
+      "field": "C.M. Las Eras de Columbrianos 1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22909958"
+    },
+    {
+      "id": "24217158",
+      "club_id": "4311",
+      "club_name": "C.D. Inter Minero Bierzo",
+      "name": "C.D. Inter Minero Bierzo",
+      "category": "Cadetes",
+      "competition": "3ª División Provincial de Cadetes",
+      "field": "C.M. Fuentesnuevas 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217158"
+    },
+    {
+      "id": "24217157",
+      "club_id": "4311",
+      "club_name": "C.D. Inter Minero Bierzo",
+      "name": "C.D. Inter Minero Bierzo",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Fuentesnuevas 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217157"
+    },
+    {
+      "id": "24217277",
+      "club_id": "4311",
+      "club_name": "C.D. Inter Minero Bierzo",
+      "name": "C.D. Inter Minero Bierzo \"B\"",
+      "category": "Infantiles",
+      "competition": "3ª División Provincial de Infantiles",
+      "field": "C.M. Fuentesnuevas 2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217277"
+    },
+    {
+      "id": "24217156",
+      "club_id": "4311",
+      "club_name": "C.D. Inter Minero Bierzo",
+      "name": "C.D. Inter Minero Bierzo",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Fuentesnuevas 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217156"
+    },
+    {
+      "id": "24217680",
+      "club_id": "4311",
+      "club_name": "C.D. Inter Minero Bierzo",
+      "name": "C.D. Inter Minero Bierzo \"B\"",
+      "category": "Alevines",
+      "competition": "3ª División Provincial de Alevines",
+      "field": "C.M. Fuentesnuevas 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217680"
+    },
+    {
+      "id": "24217155",
+      "club_id": "4311",
+      "club_name": "C.D. Inter Minero Bierzo",
+      "name": "C.D. Inter Minero Bierzo",
+      "category": "Benjamines",
+      "competition": "3ª División Provincial de Benjamines",
+      "field": "C.M. Fuentesnuevas 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217155"
+    },
+    {
+      "id": "24217159",
+      "club_id": "4311",
+      "club_name": "C.D. Inter Minero Bierzo",
+      "name": "C.D. Inter Minero Bierzo",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Prebenjamines",
+      "field": "C.M. Fuentesnuevas 2.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217159"
+    },
+    {
+      "id": "24217276",
+      "club_id": "4311",
+      "club_name": "C.D. Inter Minero Bierzo",
+      "name": "C.D. Inter Minero Bierzo",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217276"
+    },
+    {
+      "id": "10081472",
+      "club_id": "4941",
+      "club_name": "Soccer Ponferradina",
+      "name": "Soccer Ponferradina",
+      "category": "Cadetes",
+      "competition": "1ª División Provincial de Cadetes",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10081472"
+    },
+    {
+      "id": "10081473",
+      "club_id": "4941",
+      "club_name": "Soccer Ponferradina",
+      "name": "Soccer Ponferradina",
+      "category": "Infantiles",
+      "competition": "1ª División Provincial de Infantiles",
+      "field": "C.M. Compostilla Vicente del Bosque",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10081473"
+    },
+    {
+      "id": "15097",
+      "club_id": "4941",
+      "club_name": "Soccer Ponferradina",
+      "name": "Soccer Ponferradina",
+      "category": "Alevines",
+      "competition": "1ª División Provincial de Alevines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.2",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15097"
+    },
+    {
+      "id": "14502",
+      "club_id": "4941",
+      "club_name": "Soccer Ponferradina",
+      "name": "Soccer Ponferradina",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Benjamines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=14502"
+    },
+    {
+      "id": "15098",
+      "club_id": "4941",
+      "club_name": "Soccer Ponferradina",
+      "name": "Soccer Ponferradina",
+      "category": "Benjamines",
+      "competition": "1ª División Provincial de Prebenjamines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=15098"
+    },
+    {
+      "id": "24216896",
+      "club_id": "4941",
+      "club_name": "Soccer Ponferradina",
+      "name": "Soccer Ponferradina \"B\"",
+      "category": "Benjamines",
+      "competition": "2ª División Provincial de Prebenjamines",
+      "field": "C.M. Compostilla Vicente del Bosque 1.1",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24216896"
+    },
+    {
+      "id": "16381",
+      "club_id": "4941",
+      "club_name": "Soccer Ponferradina",
+      "name": "Soccer Ponferradina",
+      "category": "Debutantes",
+      "competition": "Debutantes",
+      "field": "",
+      "url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16381"
+    }
+  ]
+}

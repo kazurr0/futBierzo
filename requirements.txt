@@ -1,0 +1,2 @@
+# Windows necesita la base IANA para Europe/Madrid.
+tzdata==2026.4

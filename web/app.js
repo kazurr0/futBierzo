@@ -1,0 +1,201 @@
+import {selectionState, toggleGroup, normalize, pending} from './selection.js';
+
+const $ = selector => document.querySelector(selector);
+const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const STORAGE = 'futbierzo-selection-v1';
+const state = {catalog:null, selected:new Set(), view:'teams', mode:'club', filter:'all', matches:[], request:0, groups:new Map(), expanded:new Set()};
+const labels = {scheduled:'Programado',live:'En juego',provisional:'Resultado provisional',halftime:'Descanso',final:'Finalizado',postponed:'Aplazado'};
+
+function notice(text) {
+  $('#notice').textContent = text;
+  $('#notice').hidden = !text;
+}
+
+async function get(path) {
+  const response = await fetch(path, {cache:'no-store'});
+  if (!response.ok) throw new Error('No se pudieron cargar los datos. Prueba a actualizar.');
+  return response.json();
+}
+
+function saveSelection() {
+  try {localStorage.setItem(STORAGE, JSON.stringify([...state.selected]));}
+  catch {notice('El navegador no permite guardar la selección. Se mantendrá mientras esta página esté abierta.');}
+  summary();
+}
+
+function summary() {
+  const clubs = new Set(state.catalog.teams.filter(t => state.selected.has(t.id)).map(t => t.club_id));
+  const n = state.selected.size;
+  $('#selection-count').textContent = n;
+  $('#selection-summary').textContent = n ? `Sigues ${n} ${n === 1 ? 'equipo' : 'equipos'} de ${clubs.size} ${clubs.size === 1 ? 'club' : 'clubes'}` : 'Sin equipos seleccionados';
+  $('#all-bierzo').textContent = n === state.catalog.teams.length ? '✓ Sigues todo el Bierzo' : 'Seguir todo el Bierzo';
+}
+
+function renderTeams() {
+  const term = normalize($('#search').value.trim());
+  const category = $('#category').value, competition = $('#competition').value;
+  const teams = state.catalog.teams.filter(t => (!category || t.category === category) &&
+    (!competition || t.competition === competition) &&
+    (!term || normalize(`${t.name} ${t.club_name} ${t.category} ${t.competition}`).includes(term)) &&
+    (state.mode !== 'selected' || state.selected.has(t.id)));
+  const groups = new Map();
+  for (const team of teams) {
+    const key = state.mode === 'category' ? team.competition : team.club_id;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(team);
+  }
+  state.groups = new Map();
+  let index = 0;
+  const cards = [...groups.entries()].sort((a,b) => {
+    const getName = entry => state.mode === 'category' ? entry[0] : entry[1][0].club_name;
+    return getName(a).localeCompare(getName(b), 'es');
+  }).map(([key, entries]) => {
+    const groupId = String(index++);
+    const scope = `${state.mode}:${key}`;
+    state.groups.set(groupId, entries.map(t => t.id));
+    const selection = selectionState(entries.map(t => t.id), state.selected);
+    const title = state.mode === 'category' ? key : entries[0].club_name;
+    const monogram = title.replace(/\b(C\.D\.|S\.D\.|S\.A\.D\.)/g, '').trim().split(/\s+/).slice(0,2).map(x => x[0]).join('');
+    const open = state.expanded.has(scope) || term || state.mode === 'selected';
+    return `<details class="club-card" data-scope="${escape(scope)}" ${open ? 'open' : ''}>
+      <summary><span class="monogram">${escape(monogram)}</span><span class="club-title"><strong>${escape(title)}</strong><small>${entries.length} equipos · ${selection.count} seleccionados</small></span><span class="chevron">⌄</span></summary>
+      <label class="all-row"><input type="checkbox" data-group="${groupId}" ${selection.checked ? 'checked' : ''} aria-label="Seleccionar los equipos visibles de ${escape(title)}"><span>${category || competition || term || state.mode === 'selected' ? 'Todos los equipos visibles' : 'Todos sus equipos'}</span></label>
+      ${entries.map(t => `<label class="team-row ${state.selected.has(t.id) ? 'selected' : ''}"><input type="checkbox" data-team="${t.id}" ${state.selected.has(t.id) ? 'checked' : ''}><span>${escape(t.name)}<small>${escape(t.competition)} · ${escape(t.field || 'Campo sin publicar')}</small></span></label>`).join('')}
+    </details>`;
+  });
+  $('#team-list').innerHTML = cards.join('') || `<div class="empty"><h3>${state.mode === 'selected' ? 'Tu grada empieza aquí' : 'No hay coincidencias'}</h3><p>${state.mode === 'selected' ? 'Selecciona tus equipos en «Por club» para encontrarlos juntos en esta sección.' : 'Prueba con otro nombre o cambia los filtros.'}</p></div>`;
+  for (const checkbox of document.querySelectorAll('[data-group]')) {
+    checkbox.indeterminate = selectionState(state.groups.get(checkbox.dataset.group), state.selected).indeterminate;
+  }
+  for (const details of document.querySelectorAll('.club-card')) {
+    details.addEventListener('toggle', () => details.open ? state.expanded.add(details.dataset.scope) : state.expanded.delete(details.dataset.scope));
+  }
+  $('#catalog-count').textContent = `${teams.length} equipos`;
+  $('#list-title').textContent = {club:'Clubes del Bierzo',category:'Competiciones y categorías',selected:'Tus favoritos'}[state.mode];
+  summary();
+}
+
+function dateLabel(date) {
+  return date ? new Intl.DateTimeFormat('es', {weekday:'short',day:'numeric',month:'short'}).format(new Date(`${date}T12:00:00`)) : 'Fecha pendiente';
+}
+
+function updateLabel(stamp) {
+  if (!stamp) return 'Sin actualización publicada';
+  const date = new Date(stamp);
+  return Number.isNaN(date.getTime()) ? 'Sin actualización publicada' : `Actualizado ${date.toLocaleString('es', {timeZone:'Europe/Madrid',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}`;
+}
+
+function badge(match) {
+  if (pending(match)) return `<span class="badge pending">${match.date ? 'Horario pendiente' : 'Fecha y hora pendientes'}</span>`;
+  return `<span class="badge ${escape(match.status)}">${labels[match.status] || 'Sin estado'}</span>`;
+}
+
+function score(match) {
+  return match.score ? match.score.join(' – ') : (match.time || '–');
+}
+
+function renderMatches() {
+  const matches = state.matches.filter(m => (state.view !== 'live' || ['live','provisional','halftime'].includes(m.status)) &&
+    (state.filter !== 'pending' || pending(m)) && (state.filter !== 'final' || m.status === 'final'));
+  const noSelection = $('#only-mine').checked && !state.selected.size;
+  $('#match-list').innerHTML = matches.map(m => `<button class="match-card" data-match="${escape(m.id)}" aria-label="Ver ${escape(m.home)} contra ${escape(m.away)}">
+    <div class="match-top"><span>${escape(m.competition)}</span>${badge(m)}</div>
+    <div class="score-row"><span class="team">${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${escape(m.away)}</span></div>
+    <div class="match-bottom"><span>${escape(dateLabel(m.date))}${m.time ? ` · ${escape(m.time)}` : ''}</span><small>${escape(m.score ? updateLabel(m.updated_at) : m.field || 'Campo sin publicar')}</small></div>
+  </button>`).join('') || `<div class="empty"><h3>${noSelection ? 'Elige tus equipos' : state.view === 'live' ? 'La grada está en espera' : 'Aún no hay partidos para mostrar'}</h3><p>${noSelection ? 'Selecciona equipos en «Mis equipos» o desactiva «Solo mis equipos» para ver todo el Bierzo.' : $('#demo').checked ? 'No hay ejemplos que coincidan con esta selección y estos filtros.' : 'Los partidos aparecerán al importar los datos de la federación. Puedes activar «Ver demostración» para explorar el diseño.'}</p>${noSelection ? '<button class="primary" data-view="teams">Seleccionar equipos</button>' : ''}</div>`;
+}
+
+async function loadMatches() {
+  const request = ++state.request;
+  $('#refresh').disabled = true;
+  $('#match-list').innerHTML = '<div class="empty"><p>Cargando partidos…</p></div>';
+  try {
+    const status = await get('/api/status');
+    const demo = $('#demo').checked;
+    const params = new URLSearchParams({from:status.windows[0][0],to:status.windows[1][1]});
+    if ($('#only-mine').checked) params.set('teams', [...state.selected].join(','));
+    const data = await get(`${demo ? '/api/demo/matches' : '/api/matches'}?${params}`);
+    if (request !== state.request) return;
+    state.matches = data.matches;
+    $('#date-range').textContent = `${dateLabel(status.windows[0][0])} — ${dateLabel(status.windows[1][1])}`;
+    $('#feed-note').textContent = demo ? 'DEMOSTRACIÓN · Encuentros y resultados ficticios para probar la interfaz.' :
+      `${status.last_import ? 'Última importación: ' + new Date(status.last_import).toLocaleString('es', {timeZone:'Europe/Madrid'}) : 'Todavía no se han importado partidos.'} · Recogida automática pendiente de conexión. Los datos ausentes no se interpretan como 0–0.`;
+    renderMatches();
+  } catch (error) {
+    if (request !== state.request) return;
+    state.matches = [];
+    $('#match-list').innerHTML = '<div class="empty"><h3>No se pudo cargar la agenda</h3><p>Comprueba la conexión y pulsa «Actualizar».</p></div>';
+    notice(error.message);
+  } finally {
+    if (request === state.request) $('#refresh').disabled = false;
+  }
+}
+
+function changeView(view) {
+  state.view = view;
+  state.filter = 'all';
+  for (const button of document.querySelectorAll('.main-nav button')) button.classList.toggle('active', button.dataset.view === view);
+  for (const button of document.querySelectorAll('[data-filter]')) button.classList.toggle('active', button.dataset.filter === 'all');
+  $('#teams-view').hidden = view !== 'teams';
+  $('#matches-view').hidden = view === 'teams';
+  $('#match-tabs').hidden = view === 'live';
+  $('#heading').textContent = {teams:'Elige a quién seguir.',agenda:'El próximo partido empieza aquí.',live:'Todos juntos en la grada.'}[view];
+  $('#subtitle').textContent = {teams:'Un club entero, una categoría o tus equipos favoritos.',agenda:'Dos semanas de fútbol. También los horarios pendientes.',live:'Marcadores publicados y la hora de su última actualización.'}[view];
+  if (view !== 'teams') loadMatches();
+}
+
+function showDetail(id) {
+  const m = state.matches.find(match => match.id === id);
+  if (!m) return;
+  const lineup = m.lineups ? `<div class="lineups">${['home','away'].map(side => `<div><strong>${escape(side === 'home' ? m.home : m.away)}</strong><ul>${(m.lineups[side] || []).map(p => `<li>${escape(p.number)} · ${escape(p.name)}</li>`).join('')}</ul></div>`).join('')}</div>` : '<p>Alineación aún no publicada.</p>';
+  const events = m.events?.length ? `<ul>${m.events.map(e => `<li>${escape(e.minute ?? '')} ${escape(e.type)} · ${escape(e.player || '')}</li>`).join('')}</ul>` : '<p>Goleadores, cambios y tarjetas sin publicar.</p>';
+  $('#detail-body').innerHTML = `<div class="detail-score"><p>${escape(m.competition)}</p><div class="score-row"><span class="team">${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${escape(m.away)}</span></div><p>${escape(labels[m.status])} · ${escape(dateLabel(m.date))}${m.time ? ` · ${escape(m.time)}` : ''}</p></div>
+    <section class="detail-section"><h3>Resumen</h3><p>${escape(m.field || 'Campo sin publicar')}<br>${escape(updateLabel(m.updated_at))}<br>Descanso: ${m.halftime_score ? escape(m.halftime_score.join(' – ')) : 'Sin publicar'}</p>${!id.startsWith('demo-') ? `<a href="https://www.rfcylf.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=${encodeURIComponent(id)}&cod_acta=${encodeURIComponent(id)}" target="_blank" rel="noopener">Ver ficha en la RFCYLF ↗</a>` : '<p>Partido ficticio de demostración.</p>'}</section><section class="detail-section"><h3>Alineaciones</h3>${lineup}</section><section class="detail-section"><h3>Eventos del partido</h3>${events}</section>`;
+  $('#detail').showModal();
+}
+
+async function init() {
+  try {
+    state.catalog = await get('/api/catalog');
+    let saved = [];
+    try {const raw = JSON.parse(localStorage.getItem(STORAGE) || '[]'); if (Array.isArray(raw)) saved = raw;}
+    catch {notice('La selección guardada no se pudo recuperar. Puedes volver a elegir tus equipos.');}
+    const validIds = new Set(state.catalog.teams.map(t => t.id));
+    state.selected = new Set(saved.filter(id => validIds.has(id)));
+    for (const [key, selector] of [['category','#category'],['competition','#competition']]) {
+      const values = [...new Set(state.catalog.teams.map(t => t[key]))].sort((a,b) => a.localeCompare(b,'es'));
+      $(selector).insertAdjacentHTML('beforeend', values.map(value => `<option value="${escape(value)}">${escape(value)}</option>`).join(''));
+    }
+    renderTeams();
+    document.addEventListener('click', event => {
+      const view = event.target.closest('[data-view]');
+      if (view) changeView(view.dataset.view);
+      const mode = event.target.closest('[data-mode]');
+      if (mode) {state.mode = mode.dataset.mode; document.querySelectorAll('[data-mode]').forEach(b => b.classList.toggle('active', b === mode)); renderTeams();}
+      const filter = event.target.closest('[data-filter]');
+      if (filter) {state.filter = filter.dataset.filter; document.querySelectorAll('[data-filter]').forEach(b => b.classList.toggle('active', b === filter)); renderMatches();}
+      const match = event.target.closest('[data-match]');
+      if (match) showDetail(match.dataset.match);
+    });
+    $('#team-list').addEventListener('change', event => {
+      const target = event.target;
+      if (target.dataset.team) toggleGroup([target.dataset.team], state.selected, target.checked);
+      if (target.dataset.group) toggleGroup(state.groups.get(target.dataset.group), state.selected, target.checked);
+      saveSelection(); renderTeams();
+    });
+    $('#search').addEventListener('input', renderTeams);
+    $('#category').addEventListener('change', renderTeams);
+    $('#competition').addEventListener('change', renderTeams);
+    $('#all-bierzo').addEventListener('click', () => {toggleGroup(state.catalog.teams.map(t => t.id), state.selected, true); saveSelection(); renderTeams();});
+    $('#clear').addEventListener('click', () => {state.selected.clear();saveSelection();renderTeams();});
+    $('#go-agenda').addEventListener('click', () => changeView('agenda'));
+    for (const selector of ['#demo','#only-mine']) $(selector).addEventListener('change', loadMatches);
+    $('#refresh').addEventListener('click', () => {notice('');loadMatches();});
+    $('#close-detail').addEventListener('click', () => $('#detail').close());
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
+  } catch (error) {notice(error.message);$('#team-list').innerHTML = '<div class="empty"><h3>El catálogo no está disponible</h3><p>Recarga la página cuando vuelva la conexión.</p></div>';}
+}
+init();
+setInterval(() => {
+  if (!document.hidden && state.view === 'live' && !$('#refresh').disabled) loadMatches();
+}, 30000);
