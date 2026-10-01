@@ -1,4 +1,4 @@
-import {matchGroups, selectedWindow} from './matches.js';
+import {matchGroups, selectedWindow, calendarWindows, quickDates} from './matches.js';
 import {selectionState, toggleGroup, normalize, pending, competitionsForCategory} from './selection.js';
 import {crestMarkup, matchBadge, handleCrestError} from './crests.js';
 
@@ -49,6 +49,12 @@ function setTeamMode(mode) {
     button.classList.toggle('active', button.dataset.mode === mode));
 }
 
+function openLeaguePicker() {
+  changeView('teams'); setTeamMode('category');
+  $('#search').value = ''; $('#league-help').hidden = false;
+  renderTeams(); $('#category').focus();
+  $('#category').scrollIntoView({block:'center',behavior:'smooth'});
+}
 function browseFilteredTeams() {
   if ($('#category').value || $('#competition').value) setTeamMode('category');
   renderTeams();
@@ -119,6 +125,8 @@ function score(match) {
 
 function renderMatches() {
   const matches = state.matches.filter(m => (state.view !== 'live' || ['live','provisional','halftime'].includes(m.status)) &&
+    (!$('#match-category').value || new RegExp('(?:^|[^a-z])' + normalize($('#match-category').value) + '(?:$|[^a-z])').test(normalize(m.competition))) &&
+    (state.filter !== 'live' || ['live','provisional','halftime'].includes(m.status)) &&
     (state.filter !== 'pending' || pending(m)) && (state.filter !== 'final' || m.status === 'final'));
   const noSelection = $('#only-mine').checked && !state.selected.size;
   const card = m => `<button class="match-card" data-match="${escape(m.id)}" aria-label="Ver ${escape(m.home)} contra ${escape(m.away)}">
@@ -137,8 +145,11 @@ async function loadMatches() {
   try {
     const status = await get('/api/status');
     const demo = $('#demo').checked;
-    status.windows.forEach((window,index) => {$('#period option[value="'+index+'"]').textContent = `${dateLabel(window[0])} — ${dateLabel(window[1])} · 7 días`;});
-    const period = selectedWindow(status.windows,$('#period').value);
+    const windows = calendarWindows(status.windows[0][0]);
+    const dates = quickDates(status.windows[0][0]);
+    $('#quick-days').innerHTML = `<button class="${!$('#match-day').value ? 'active' : ''}" data-day="">Semana<small>Lun — dom</small></button>` + dates.map((day,index) => `<button class="${$('#match-day').value === day ? 'active' : ''}" data-day="${day}">${['Hoy','Mañana','Sábado','Domingo'][index]}<small>${dateLabel(day)}</small></button>`).join('');
+    windows.forEach((window,index) => {$('#period option[value="'+index+'"]').textContent = `${dateLabel(window[0])} — ${dateLabel(window[1])} · 7 días`;});
+    const period = $('#match-day').value ? [$('#match-day').value,$('#match-day').value] : selectedWindow(windows,$('#period').value);
     const params = new URLSearchParams({from:period[0],to:period[1]});
     if ($('#only-mine').checked) params.set('teams', [...state.selected].join(','));
     const data = await get(`${demo ? '/api/demo/matches' : '/api/matches'}?${params}`);
@@ -195,6 +206,10 @@ async function init() {
     }
     renderTeams();
     document.addEventListener('click', event => {
+      const league = event.target.closest('[data-add-league]');
+      if (league) openLeaguePicker();
+      const day = event.target.closest('[data-day]');
+      if (day) {$('#match-day').value = day.dataset.day;loadMatches();}
       const view = event.target.closest('[data-view]');
       if (view) changeView(view.dataset.view);
       const mode = event.target.closest('[data-mode]');
@@ -218,7 +233,10 @@ async function init() {
     $('#go-agenda').addEventListener('click', () => changeView('agenda'));
     for (const selector of ['#demo','#only-mine']) $(selector).addEventListener('change', loadMatches);
     $('#refresh').addEventListener('click', () => {notice('');loadMatches();});
-    $('#period').addEventListener('change', loadMatches);
+    $('#period').addEventListener('change', () => {$('#match-day').value = '';loadMatches();});
+    $('#match-day').addEventListener('change', loadMatches);
+    $('#match-category').innerHTML += [...new Set(state.catalog.teams.map(t => t.category))].sort().map(c => `<option value="${escape(c)}">${escape(c)}</option>`).join('');
+    $('#match-category').addEventListener('change', renderMatches);
     $('#group-by').addEventListener('change', renderMatches);
     $('#close-detail').addEventListener('click', () => $('#detail').close());
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});

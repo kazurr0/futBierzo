@@ -1,4 +1,15 @@
 import {matchBadge} from './crests.js';
+export function calendarWindows(today) {
+  const day = new Date(today + 'T12:00:00Z');
+  day.setUTCDate(day.getUTCDate() - (day.getUTCDay() + 6) % 7);
+  const at = offset => {const d = new Date(day); d.setUTCDate(d.getUTCDate()+offset); return d.toISOString().slice(0,10);};
+  return [[at(0),at(6)],[at(7),at(13)]];
+}
+export function quickDates(today) {
+  const day = new Date(today + 'T12:00:00Z');
+  const at = offset => {const d = new Date(day); d.setUTCDate(d.getUTCDate()+offset); return d.toISOString().slice(0,10);};
+  return [today,at(1),at((6-day.getUTCDay()+7)%7),at((7-day.getUTCDay())%7)];
+}
 export function selectedWindow(windows, period) {
   return period === 'all' ? [windows[0][0],windows[1][1]] : windows[period === '1' ? 1 : 0];
 }
