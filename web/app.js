@@ -219,10 +219,18 @@ function changeView(view) {
 function showDetail(id) {
   const m = state.matches.find(match => match.id === id);
   if (!m) return;
-  const lineup = m.lineups ? `<div class="lineups">${['home','away'].map(side => `<div><div class="lineup-team">${crestMarkup(matchBadge(m,side,state.catalog),m[side],'small')}<strong>${escape(m[side])}</strong></div><ul>${(m.lineups[side] || []).map(p => `<li>${escape(p.number)} · ${escape(p.name)}</li>`).join('')}</ul></div>`).join('')}</div>` : '<p>Alineación aún no publicada.</p>';
-  const events = m.events?.length ? `<ul>${m.events.map(e => `<li>${escape(e.minute ?? '')} ${escape(e.type)} · ${escape(e.player || '')}</li>`).join('')}</ul>` : '<p>Goleadores, cambios y tarjetas sin publicar.</p>';
-  $('#detail-body').innerHTML = `<div class="detail-score"><p>${escape(m.competition)}</p><div class="score-row"><span class="team">${crestMarkup(matchBadge(m,'home',state.catalog),m.home,'match-crest')}${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${crestMarkup(matchBadge(m,'away',state.catalog),m.away,'match-crest')}${escape(m.away)}</span></div><p>${escape(labels[m.status])} · ${escape(dateLabel(m.date))}${m.time ? ` · ${escape(m.time)}` : ''}</p></div>
-    <section class="detail-section"><h3>Resumen</h3><p>${escape(m.field || 'Campo sin publicar')}<br>${escape(updateLabel(m.updated_at))}<br>Descanso: ${m.halftime_score ? escape(m.halftime_score.join(' – ')) : 'Sin publicar'}</p>${!id.startsWith('demo-') ? `<a href="https://www.rfcylf.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=${encodeURIComponent(id)}&cod_acta=${encodeURIComponent(id)}" target="_blank" rel="noopener">Ver ficha en la RFCYLF ↗</a>` : '<p>Partido ficticio de demostración.</p>'}</section><section class="detail-section"><h3>Alineaciones</h3>${lineup}</section><section class="detail-section"><h3>Eventos del partido</h3>${events}</section>`;
+  const eventIcon = type => ({goal:'⚽',gol:'⚽',yellow:'🟨',red:'🟥',substitution:'⇄',change:'⇄',halftime:'◷',final:'✓'}[String(type).toLowerCase()] || '•');
+  const events = [...(m.events || [])].sort((a,b)=>(b.minute ?? -1)-(a.minute ?? -1));
+  const eventRows = items => items.length ? `<div class="event-timeline">${items.map(e=>`<div class="event-row"><span class="event-minute">${escape(e.minute ?? '—')}${e.minute != null?'′':''}</span><span class="event-icon">${eventIcon(e.type)}</span><div><strong>${escape(e.type)}</strong><small>${escape(e.player || 'Jugador sin publicar')}</small></div></div>`).join('')}</div>` : '<p class="detail-empty">Información aún no publicada.</p>';
+  const lineup = `<div class="lineups">${['home','away'].map(side=>`<div class="lineup-column"><div class="lineup-team">${crestMarkup(matchBadge(m,side,state.catalog),m[side],'small')}<strong>${escape(m[side])}</strong></div>${m.lineups?.[side]?.length?`<ol class="player-list">${m.lineups[side].map(p=>`<li><span>${escape(p.number)}</span>${escape(p.name)}</li>`).join('')}</ol>`:'<p class="detail-empty">Alineación sin publicar.</p>'}</div>`).join('')}</div>`;
+  const goals = events.filter(e=>['goal','gol'].includes(String(e.type).toLowerCase()));
+  $('#detail-body').innerHTML = `<div class="detail-score"><p>${escape(m.competition)}</p><div class="score-row"><span class="team">${crestMarkup(matchBadge(m,'home',state.catalog),m.home,'match-crest')}${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${crestMarkup(matchBadge(m,'away',state.catalog),m.away,'match-crest')}${escape(m.away)}</span></div><p><span class="detail-status">${escape(labels[m.status] || 'Estado sin publicar')}</span></p><p>${escape(dateLabel(m.date))}${m.time?` · ${escape(m.time)}`:''}</p><p>${escape(m.field || 'Campo sin publicar')}</p></div>
+  <div class="detail-content">${id.startsWith('demo-')?'<p class="demo-banner">DEMOSTRACIÓN · Datos ficticios</p>':''}<div class="detail-results"><div>Descanso<strong>${m.halftime_score?escape(m.halftime_score.join(' – ')):'Sin publicar'}</strong></div><div>Final<strong>${m.status==='final' && m.score?escape(m.score.join(' – ')):'Pendiente'}</strong></div></div>
+  <div class="detail-tabs" role="tablist" aria-label="Información del partido">${[['summary','Resumen'],['lineups','Alineaciones'],['events','Eventos']].map(([key,label],index)=>`<button id="detail-tab-${key}" role="tab" aria-controls="detail-panel-${key}" aria-selected="${index===0}" data-detail-tab="${key}" class="${index===0?'active':''}">${label}</button>`).join('')}</div>
+  <section id="detail-panel-summary" role="tabpanel" aria-labelledby="detail-tab-summary" data-detail-panel="summary"><h3>Goleadores</h3>${eventRows(goals)}<div class="detail-state-note">${escape(labels[m.status] || 'Estado sin publicar')} · ${escape(updateLabel(m.updated_at))}</div><h3>Últimos eventos</h3>${eventRows(events.slice(0,3))}</section>
+  <section id="detail-panel-lineups" role="tabpanel" aria-labelledby="detail-tab-lineups" data-detail-panel="lineups" hidden><h3>Alineación publicada</h3>${lineup}</section>
+  <section id="detail-panel-events" role="tabpanel" aria-labelledby="detail-tab-events" data-detail-panel="events" hidden><h3>Cronología del partido</h3>${eventRows(events)}</section>
+  ${!id.startsWith('demo-')?`<a class="detail-source" href="https://www.rfcylf.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=${encodeURIComponent(id)}&cod_acta=${encodeURIComponent(id)}" target="_blank" rel="noopener">Ver ficha en la RFCYLF ↗</a>`:''}</div>`;
   $('#detail').showModal();
 }
 
@@ -240,6 +248,8 @@ async function init() {
     }
     renderTeams();
     document.addEventListener('click', event => {
+      const detailTab = event.target.closest('[data-detail-tab]');
+      if (detailTab) {document.querySelectorAll('[data-detail-tab]').forEach(button=>{button.classList.toggle('active',button===detailTab);button.setAttribute('aria-selected',String(button===detailTab));});document.querySelectorAll('[data-detail-panel]').forEach(panel=>panel.hidden=panel.dataset.detailPanel!==detailTab.dataset.detailTab);}
       const league = event.target.closest('[data-add-league]');
       if (league) openLeaguePicker();
       const day = event.target.closest('[data-day]');
