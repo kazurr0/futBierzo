@@ -7,7 +7,7 @@ document.addEventListener('error', handleCrestError, true);
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const STORAGE = 'futbierzo-selection-v1';
-const state = {catalog:null, selected:new Set(), view:'teams', mode:'club', filter:'all', matches:[], request:0, groups:new Map(), expanded:new Set()};
+const state = {catalog:null, selected:new Set(), view:'agenda', mode:'club', filter:'all', matches:[], weekend:false, request:0, groups:new Map(), expanded:new Set()};
 const labels = {scheduled:'Programado',live:'En juego',provisional:'Resultado provisional',halftime:'Descanso',final:'Finalizado',postponed:'Aplazado'};
 
 function notice(text) {
@@ -30,6 +30,12 @@ function saveSelection() {
 function summary() {
   const clubs = new Set(state.catalog.teams.filter(t => state.selected.has(t.id)).map(t => t.club_id));
   const n = state.selected.size;
+  const leagues = [...new Set(state.catalog.teams.filter(t => state.selected.has(t.id)).map(t => t.competition))];
+  $('#followed-leagues').innerHTML = leagues.map((league,index) => {
+    const teams = state.catalog.teams.filter(t => t.competition===league);
+    const count = teams.filter(t => state.selected.has(t.id)).length;
+    return `<div><span><strong>${escape(league)}</strong><small>${count} de ${teams.length} equipos del Bierzo</small></span><button class="text-button" data-remove-league="${escape(league)}">Quitar liga</button></div>`;
+  }).join('') || '<p class="feed-note">Todavía no sigues equipos ni ligas. Elige tu selección debajo.</p>';
   $('#selection-count').textContent = n;
   $('#selection-summary').textContent = n ? `Sigues ${n} ${n === 1 ? 'equipo' : 'equipos'} de ${clubs.size} ${clubs.size === 1 ? 'club' : 'clubes'}` : 'Sin equipos seleccionados';
   $('#all-bierzo').textContent = n === state.catalog.teams.length ? '✓ Sigues todo el Bierzo' : 'Seguir todo el Bierzo';
@@ -134,7 +140,9 @@ function renderMatches() {
     <div class="score-row"><span class="team">${crestMarkup(matchBadge(m,'home',state.catalog),m.home,'match-crest')}${escape(m.home)}</span><span class="score">${escape(score(m))}</span><span class="team">${crestMarkup(matchBadge(m,'away',state.catalog),m.away,'match-crest')}${escape(m.away)}</span></div>
     <div class="match-bottom"><span>${escape(dateLabel(m.date))}${m.time ? ` · ${escape(m.time)}` : ''}</span><small>${escape(m.score ? updateLabel(m.updated_at) : m.field || 'Campo sin publicar')}</small></div>
   </button>`;
-  const groups = matchGroups(matches,$('#group-by').value,state.catalog,$('#only-mine').checked ? state.selected : null);
+  const groups = matchGroups(matches.filter(m=>!pending(m)),$('#group-by').value,state.catalog,$('#only-mine').checked ? state.selected : null);
+  const unassigned = matches.filter(pending);
+  if (unassigned.length) groups.push({title:'Sin horario · pendientes de confirmar',items:matchGroups(unassigned,'date',state.catalog)[0].items});
   $('#match-list').innerHTML = groups.map(group => `<section class="match-group">${group.title ? `<h2>${escape(group.title)} <small>${group.items.length} partidos</small></h2>` : ''}<div class="match-grid">${group.items.map(card).join('')}</div></section>`).join('') || `<div class="empty"><h3>${noSelection ? 'Elige tus equipos' : state.view === 'live' ? 'La grada está en espera' : 'Aún no hay partidos para mostrar'}</h3><p>${noSelection ? 'Selecciona equipos en «Mis equipos» o desactiva «Solo mis equipos» para ver todo el Bierzo.' : $('#demo').checked ? 'No hay ejemplos que coincidan con esta selección y estos filtros.' : 'Los partidos aparecerán al importar los datos de la federación. Puedes activar «Ver demostración» para explorar el diseño.'}</p>${noSelection ? '<button class="primary" data-view="teams">Seleccionar equipos</button>' : ''}</div>`;
 }
 
@@ -147,9 +155,10 @@ async function loadMatches() {
     const demo = $('#demo').checked;
     const windows = calendarWindows(status.windows[0][0]);
     const dates = quickDates(status.windows[0][0]);
-    $('#quick-days').innerHTML = `<button class="${!$('#match-day').value ? 'active' : ''}" data-day="">Semana<small>Lun — dom</small></button>` + dates.map((day,index) => `<button class="${$('#match-day').value === day ? 'active' : ''}" data-day="${day}">${['Hoy','Mañana','Sábado','Domingo'][index]}<small>${dateLabel(day)}</small></button>`).join('');
+    $('#quick-days').innerHTML = `<button class="${state.weekend ? 'active' : ''}" data-weekend>Fin de semana<small>Sáb — dom</small></button>` + `<button class="${!$('#match-day').value && !state.weekend ? 'active' : ''}" data-day="">Semana<small>Lun — dom</small></button>` + dates.map((day,index) => `<button class="${$('#match-day').value === day ? 'active' : ''}" data-day="${day}">${['Hoy','Mañana','Sábado','Domingo'][index]}<small>${dateLabel(day)}</small></button>`).join('');
     windows.forEach((window,index) => {$('#period option[value="'+index+'"]').textContent = `${dateLabel(window[0])} — ${dateLabel(window[1])} · 7 días`;});
-    const period = $('#match-day').value ? [$('#match-day').value,$('#match-day').value] : selectedWindow(windows,$('#period').value);
+    let period = $('#match-day').value ? [$('#match-day').value,$('#match-day').value] : selectedWindow(windows,$('#period').value);
+    if (state.weekend) {const week = windows[$('#period').value === '1' ? 1 : 0]; const saturday = new Date(week[1]+'T12:00:00Z'); saturday.setUTCDate(saturday.getUTCDate()-1); period[0]=saturday.toISOString().slice(0,10);period[1]=week[1];}
     const params = new URLSearchParams({from:period[0],to:period[1]});
     if ($('#only-mine').checked) params.set('teams', [...state.selected].join(','));
     const data = await get(`${demo ? '/api/demo/matches' : '/api/matches'}?${params}`);
@@ -158,10 +167,11 @@ async function loadMatches() {
     $('#date-range').textContent = `${dateLabel(period[0])} — ${dateLabel(period[1])}`;
     $('#feed-note').textContent = demo ? 'DEMOSTRACIÓN · Encuentros y resultados ficticios para probar la interfaz.' :
       `${status.last_schedule_collection ? 'Horarios consultados en RFCYLF: ' + new Date(status.last_schedule_collection).toLocaleString('es', {timeZone:'Europe/Madrid'}) : status.last_import ? 'Última importación: ' + new Date(status.last_import).toLocaleString('es', {timeZone:'Europe/Madrid'}) : 'Todavía no se han importado partidos.'} · Conexión del directo pendiente. Los datos ausentes no se interpretan como 0–0.`;
+    $('#coverage').hidden = demo;
     if (!demo) {
       const clubs = new Set(state.catalog.teams.filter(t => !$('#only-mine').checked || state.selected.has(t.id)).map(t => t.club_id));
       const coverageStart = period[1] >= status.windows[0][0] && period[0] < status.windows[0][0] ? status.windows[0][0] : period[0];
-      const covered = [...clubs].filter(id => {
+      const coveredClubs = [...clubs].filter(id => {
         const rows = (status.schedule_coverage || []).filter(r => r.club_id === id);
         // Only count a club when every requested date has a confirmed query.
         for (let day = new Date(coverageStart+'T12:00:00Z'); day.toISOString().slice(0,10) <= period[1]; day.setUTCDate(day.getUTCDate()+1)) {
@@ -169,7 +179,12 @@ async function loadMatches() {
           if (!rows.some(r => r.from <= stamp && r.to >= stamp)) return false;
         }
         return true;
-      }).length;
+      });
+      const covered = coveredClubs.length;
+      $('#coverage').hidden = false;
+      $('#coverage-title').textContent = `Horarios: ${covered} de ${clubs.size} clubes consultados · ${state.matches.length} partidos cargados`;
+      const missing = [...clubs].filter(id => !coveredClubs.includes(id)).map(id => state.catalog.teams.find(t => t.club_id===id).club_name);
+      $('#coverage-detail').textContent = missing.length ? 'Consultas pendientes: ' + missing.join(', ') : 'Consultas confirmadas para las fechas futuras del periodo seleccionado.';
       if (covered < clubs.size) $('#feed-note').textContent = `AGENDA INCOMPLETA · ${covered} de ${clubs.size} clubes seleccionados con consulta confirmada del ${dateLabel(coverageStart)} al ${dateLabel(period[1])}. Seleccionar equipos no descarga sus horarios. ` + $('#feed-note').textContent;
     }
     renderMatches();
@@ -185,13 +200,15 @@ async function loadMatches() {
 
 function changeView(view) {
   state.view = view;
+  $('.header-settings').classList.toggle('active',view === 'teams');
+  $('.header-settings').setAttribute('aria-pressed',String(view === 'teams'));
   state.filter = 'all';
   for (const button of document.querySelectorAll('.main-nav button')) button.classList.toggle('active', button.dataset.view === view);
   for (const button of document.querySelectorAll('[data-filter]')) button.classList.toggle('active', button.dataset.filter === 'all');
   $('#teams-view').hidden = view !== 'teams';
   $('#matches-view').hidden = view === 'teams';
   $('#match-tabs').hidden = view === 'live';
-  $('#heading').textContent = {teams:'Elige a quién seguir.',agenda:'El próximo partido empieza aquí.',live:'Todos juntos en la grada.'}[view];
+  $('#heading').textContent = {teams:'Ajustes de tu grada.',agenda:'El próximo partido empieza aquí.',live:'Todos juntos en la grada.'}[view];
   $('#subtitle').textContent = {teams:'Un club entero, una categoría o tus equipos favoritos.',agenda:'Dos semanas de fútbol. También los horarios pendientes.',live:'Marcadores publicados y la hora de su última actualización.'}[view];
   if (view !== 'teams') loadMatches();
 }
@@ -223,7 +240,12 @@ async function init() {
       const league = event.target.closest('[data-add-league]');
       if (league) openLeaguePicker();
       const day = event.target.closest('[data-day]');
-      if (day) {$('#match-day').value = day.dataset.day;loadMatches();}
+      if (day) {state.weekend=false;$('#match-day').value = day.dataset.day;loadMatches();}
+      if (event.target.closest('[data-weekend]')) {state.weekend=true;$('#match-day').value='';loadMatches();}
+      const scope = event.target.closest('[data-scope]');
+      if (scope) {$('#only-mine').checked=scope.dataset.scope==='mine';document.querySelectorAll('[data-scope]').forEach(b=>b.classList.toggle('active',b===scope));loadMatches();}
+      const remove = event.target.closest('[data-remove-league]');
+      if (remove) {toggleGroup(state.catalog.teams.filter(t=>t.competition===remove.dataset.removeLeague).map(t=>t.id),state.selected,false);saveSelection();renderTeams();}
       const view = event.target.closest('[data-view]');
       if (view) changeView(view.dataset.view);
       const mode = event.target.closest('[data-mode]');
@@ -247,12 +269,13 @@ async function init() {
     $('#go-agenda').addEventListener('click', () => changeView('agenda'));
     for (const selector of ['#demo','#only-mine']) $(selector).addEventListener('change', loadMatches);
     $('#refresh').addEventListener('click', () => {notice('');loadMatches();});
-    $('#period').addEventListener('change', () => {$('#match-day').value = '';loadMatches();});
-    $('#match-day').addEventListener('change', loadMatches);
+    $('#period').addEventListener('change', () => {state.weekend=false;$('#match-day').value = '';loadMatches();});
+    $('#match-day').addEventListener('change', () => {state.weekend=false;loadMatches();});
     $('#match-category').innerHTML += [...new Set(state.catalog.teams.map(t => t.category))].sort().map(c => `<option value="${escape(c)}">${escape(c)}</option>`).join('');
     $('#match-category').addEventListener('change', renderMatches);
     $('#group-by').addEventListener('change', renderMatches);
     $('#close-detail').addEventListener('click', () => $('#detail').close());
+    changeView('agenda');
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
   } catch (error) {notice(error.message);$('#team-list').innerHTML = '<div class="empty"><h3>El catálogo no está disponible</h3><p>Recarga la página cuando vuelva la conexión.</p></div>';}
 }
