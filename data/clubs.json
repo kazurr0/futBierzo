@@ -1,0 +1,309 @@
+[
+  {
+    "id": "4002",
+    "name": "Unión Cacabelense",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506526_600acc484abc54843867ae7936553e15_TlfMZaCh_removebg_preview.png",
+    "team_names": [
+      "Unión Cacabelense"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16524"
+  },
+  {
+    "id": "4003",
+    "name": "S.D. Ponferradina S.A.D.",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506535_352204195_1377417669485813_8465154255510104883_n_removebg_preview.png",
+    "team_names": [
+      "S.D. Ponferradina S.A.D.",
+      "S.D. Ponferradina S.A.D. \"B\"",
+      "S.D. Ponferradina S.A.D. +"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=4471"
+  },
+  {
+    "id": "4006",
+    "name": "Atlético Bembibre",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074495268_MagicEraser_231005_235844.png",
+    "team_names": [
+      "Atlético Bembibre",
+      "Atlético Bembibre \"B\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=4656"
+  },
+  {
+    "id": "4007",
+    "name": "C.D. Fabero",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074521390_Escudo_CDFabero.jpg",
+    "team_names": [
+      "C.D. Fabero"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8482"
+  },
+  {
+    "id": "4009",
+    "name": "C.D. Flores del Sil",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506539_8082621a91d98102fb0b86be7004c576_9pvRqHbw_removebg_preview.png",
+    "team_names": [
+      "C.D. Flores del Sil",
+      "C.D. Flores del Sil \"B\"",
+      "C.D. Flores del Sil \"C\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=12342"
+  },
+  {
+    "id": "4014",
+    "name": "C.D. Toreno",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506540_286435719_5381458751897821_8174278088969091263_n_removebg_preview.png",
+    "team_names": [
+      "C.D. Toreno"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8485"
+  },
+  {
+    "id": "4035",
+    "name": "C.D. Santa Marta",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074644325_Captura_de_pantalla_2026_09_04_120130.png",
+    "team_names": [
+      "C.D. Santa Marta",
+      "C.D. Santa Marta \"B\"",
+      "C.D. Santa Marta \"C\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9954"
+  },
+  {
+    "id": "4051",
+    "name": "C.D. San Ignacio",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506552_es_escudo_colegio_san_ignacio_removebg_preview.png",
+    "team_names": [
+      "C.D. San Ignacio"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=22910276"
+  },
+  {
+    "id": "4084",
+    "name": "Sparta Villafranquino",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506555_8082621a91d98102fb0b86be7004c576_Kxe37Cjj_removebg_preview.png",
+    "team_names": [
+      "Sparta Villafranquino"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24216920"
+  },
+  {
+    "id": "4093",
+    "name": "C.D.F. Cubillos",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506556_182605457_241205024468256_8621944113796357928_n_removebg_preview.png",
+    "team_names": [
+      "C.D.F. Cubillos"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16574"
+  },
+  {
+    "id": "4099",
+    "name": "C.D. Laciana",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506557_LOGO_C.D._LACIANA_EN_removebg_preview.png",
+    "team_names": [
+      "C.D. Laciana"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8500"
+  },
+  {
+    "id": "4116",
+    "name": "C.D. La Morenica Aldebi",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506560_300366967_761635888525618_5769432298508267590_n_removebg_preview.png",
+    "team_names": [
+      "C.D. La Morenica Aldebi",
+      "C.D. La Morenica Aldebi \"B\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8639"
+  },
+  {
+    "id": "4129",
+    "name": "C.D. Arenas de Vega de Espinareda",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074521367_Escudo_C.D._Arenas.png",
+    "team_names": [
+      "C.D. Arenas de Vega de Espinareda"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8507"
+  },
+  {
+    "id": "4141",
+    "name": "C.D. Toralense",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506563_LOGO_C.D._TORALENSE_EN_removebg_preview.png",
+    "team_names": [
+      "C.D. Toralense"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8562"
+  },
+  {
+    "id": "4177",
+    "name": "C.D. Berciano-Villadepalos",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074606351_escudo_sin_fondo__1_.png",
+    "team_names": [
+      "C.D. Berciano-Villadepalos"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8700"
+  },
+  {
+    "id": "4178",
+    "name": "C.D. Naraya de Halterofilia",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506568_ESC_C.D._NARAYA_DE_HALTEROFILIA.png",
+    "team_names": [
+      "C.D. Naraya de Halterofilia",
+      "C.D. Naraya de Halterofilia \"B\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=7724"
+  },
+  {
+    "id": "4190",
+    "name": "C.D. Columbrianos",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506571_Sin_t_tulo_removebg_preview__3_.png",
+    "team_names": [
+      "C.D. Columbrianos",
+      "C.D. Columbrianos \"B\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8510"
+  },
+  {
+    "id": "4213",
+    "name": "C.D. Cuatrovientos",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074521181_ESCUDO_NUEVO_C.D.C___copia.jpg",
+    "team_names": [
+      "C.D. Cuatrovientos",
+      "C.D. Cuatrovientos \"B\"",
+      "C.D. Cuatrovientos \"C\"",
+      "C.D. Cuatrovientos \"D\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10082205"
+  },
+  {
+    "id": "4234",
+    "name": "C.D.F. Atlético Bierzo",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506581_znMHGQ2h_400x400_removebg_preview__3_.png",
+    "team_names": [
+      "C.D.F. Atlético Bierzo",
+      "C.D.F. Atlético Bierzo \"B\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=8743"
+  },
+  {
+    "id": "4269",
+    "name": "C.D. Ponferrada Fútbol",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074511880_00100_0074506535_352204195_1377417669485813_8465154255510104883_n_removebg_preview.png",
+    "team_names": [
+      "C.D. Ponferrada Fútbol",
+      "C.D. Ponferrada Fútbol \"B\"",
+      "C.D. Ponferrada Fútbol \"C\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=5232"
+  },
+  {
+    "id": "4289",
+    "name": "C.D. Ponferrada City",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506614_Sin_t_tulo_removebg_preview__2_.png",
+    "team_names": [
+      "C.D. Ponferrada City"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=11378289"
+  },
+  {
+    "id": "4290",
+    "name": "Atlético Templario",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506615_10683736_794008734003076_3870263125458646863_o_removebg_preview__2_.png",
+    "team_names": [
+      "Atlético Templario",
+      "Atlético Templario \"B\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217011"
+  },
+  {
+    "id": "4302",
+    "name": "C.D. Ponfesala",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506620_1aeb22496763655f2dc65e420e84382b_removebg_preview.png",
+    "team_names": [
+      "C.D. Ponfesala"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=65605"
+  },
+  {
+    "id": "4304",
+    "name": "C.D. Santa Ana Cabañas Raras",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074597042_IMG_4005.jpeg",
+    "team_names": [
+      "C.D. Santa Ana Cabañas Raras"
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217611"
+  },
+  {
+    "id": "4311",
+    "name": "C.D. Inter Minero Bierzo",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074651307_Photoroom_20260910_064752.jpeg",
+    "team_names": [
+      "C.D. Inter Minero Bierzo",
+      "C.D. Inter Minero Bierzo \"B\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=24217158"
+  },
+  {
+    "id": "4941",
+    "name": "Soccer Ponferradina",
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506628_dc63935e94f22020f4d005500a1ea39f_removebg_preview.png",
+    "team_names": [
+      "Soccer Ponferradina",
+      "Soccer Ponferradina \"B\""
+    ],
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=10081472"
+  },
+  {
+    "id": "3120",
+    "name": "C.D. Munibar Pizarrales",
+    "team_names": [
+      "C.D. Munibar Pizarrales"
+    ],
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506448_HNME78sM_400x400_removebg_preview.png",
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=13439"
+  },
+  {
+    "id": "4293",
+    "name": "Real Aero Club de León",
+    "team_names": [
+      "Real Aero Club de León"
+    ],
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506616_302144415_561556275761433_3285929338776958791_n_removebg_preview.png",
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=65381"
+  },
+  {
+    "id": "4145",
+    "name": "C.D. Casa de Asturias en León",
+    "team_names": [
+      "C.D. Casa de Asturias en León"
+    ],
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506565_unnamed_removebg_preview__4_.png",
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=9092778"
+  },
+  {
+    "id": "4176",
+    "name": "C.D. La Virgen del Camino",
+    "team_names": [
+      "C.D. La Virgen del Camino"
+    ],
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074483100_escudo_cd_66px.png",
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=4203"
+  },
+  {
+    "id": "4013",
+    "name": "C.D. Cerecedo",
+    "team_names": [
+      "C.D. Cerecedo"
+    ],
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074501684_escudo_club.png",
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16805"
+  },
+  {
+    "id": "4025",
+    "name": "C.D.F. San Andrés",
+    "team_names": [
+      "C.D.F. San Andrés"
+    ],
+    "crest_url": "https://www.rfcylf.es/pnfg/pimg/Clubes/00100_0074506542_299387264_172583548666935_7290856594476702750_n_removebg_preview.png",
+    "source_url": "https://www.rfcylf.es/pnfg/NPcd/NFG_VisEquipos?cod_primaria=1000119&Codigo_Equipo=16231"
+  }
+]

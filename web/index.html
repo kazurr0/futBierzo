@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#850029"><meta name="description" content="Equipos y partidos del fútbol del Bierzo">
+  <title>futBierzo · Nuestro fútbol</title>
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css"><script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="masthead"><a class="brand" href="/" aria-label="futBierzo, inicio"><span class="brand-icon">fB</span><span>fut<strong>Bierzo</strong><small>Nuestro fútbol. Sus partidos.</small></span></a><button class="outline header-settings" data-view="teams">⚙ Ajustes <span id="selection-count">0</span></button></header>
+  <main>
+    <div id="notice" role="status" class="notice" hidden></div>
+    <section class="hero"><div><p class="eyebrow">TU FÚTBOL, MÁS CERCA</p><h1 id="heading">El próximo partido empieza aquí.</h1><p id="subtitle">Dos semanas de fútbol. También los horarios pendientes.</p></div><div class="hero-mark" aria-hidden="true">fB<span>DESDE LA GRADA</span></div></section>
+    <nav class="main-nav" aria-label="Secciones"><button data-view="agenda" class="active">Partidos</button><button data-view="live">En directo <span class="live-dot"></span></button></nav>
+    <section id="teams-view" hidden><h2>Equipos y ligas</h2><div id="followed-leagues" class="followed-leagues"></div>
+      <div class="toolbar"><div class="tabs" role="group" aria-label="Modo de selección"><button data-mode="club" class="active">Por club</button><button data-mode="category">Por categoría</button><button data-mode="selected">Favoritos</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar club o equipo…" aria-label="Buscar club o equipo"></label></div>
+      <div class="filters"><label>Categoría <select id="category"><option value="">Todas las categorías</option></select></label><label>Competición <select id="competition"><option value="">Todas las competiciones</option></select></label><button class="outline" data-add-league>＋ Añadir liga</button><button id="all-bierzo" class="outline">Seguir todo el Bierzo</button><button id="clear" class="text-button">Quitar selección</button></div>
+      <div class="section-line"><h2 id="list-title">Clubes del Bierzo</h2><span id="catalog-count"></span></div>
+      <p id="league-help" class="feed-note" hidden>Elige categoría y competición. Marca «Seleccionar toda la liga» para seguir sus equipos del Bierzo, o selecciona equipos individuales.</p><div id="team-list" class="club-grid"></div>
+      <div class="selection-bar"><div><strong id="selection-summary">Sin equipos seleccionados</strong><small>Tu selección se guarda en este dispositivo.</small></div><button id="go-agenda" class="primary">Ver sus partidos <span>→</span></button></div>
+    </section>
+    <section id="matches-view"><div class="quick-days" id="quick-days" aria-label="Elegir día"></div><div class="day-tools"><label>Calendario <input type="date" id="match-day"></label><button class="outline" data-add-league>＋ Añadir liga</button></div>
+      <div class="toolbar"><div class="tabs" id="match-tabs"><button data-filter="all" class="active">Todos</button><button data-filter="live">● En directo</button><button data-filter="pending">Pendientes</button><button data-filter="final">Finalizados</button></div><label class="demo-toggle"><input id="demo" type="checkbox"> Ver demostración</label></div>
+      <div class="match-context"><span id="date-range"></span><input id="only-mine" type="checkbox" checked hidden><div class="tabs" aria-label="Equipos mostrados"><button data-scope="mine" class="active">Mis equipos</button><button data-scope="all">Todo el Bierzo</button></div><button id="refresh" class="outline">Actualizar pantalla</button></div>
+      <div class="agenda-controls"><label>Periodo <select id="period"><option value="0">Esta semana · lunes a domingo</option><option value="1">Próxima semana · lunes a domingo</option><option value="all">Las dos semanas</option></select></label><label>Categoría <select id="match-category"><option value="">Todas las categorías</option></select></label><label>Agrupar por <select id="group-by"><option value="category">Categoría → División</option><option value="division">División</option><option value="club">Club</option><option value="date">Fecha y hora</option></select></label><small>Dentro de cada grupo: fecha y hora. Los partidos sin fecha siguen visibles.</small></div>
+      <details id="coverage" class="coverage"><summary id="coverage-title">Cobertura de horarios</summary><p id="coverage-detail"></p><p>Actualizar pantalla vuelve a leer los datos guardados. La consulta de horarios a RFCYLF se ejecuta desde el recolector del servidor.</p></details><p id="feed-note" class="feed-note"></p><div id="match-list"></div>
+    </section>
+    <footer class="page-footer"><span>futBierzo · Fútbol de nuestra tierra</span><span>Fuente del catálogo: RFCYLF · Proyecto independiente</span></footer>
+  </main>
+  <dialog id="detail"><div class="dialog-top"><span>Detalle del partido</span><button id="close-detail" aria-label="Cerrar detalle">✕</button></div><div id="detail-body"></div></dialog>
+</body>
+</html>
