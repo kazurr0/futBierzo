@@ -1,4 +1,4 @@
-import {matchGroups, selectedWindow, calendarWindows, quickDates} from './matches.js';
+import {matchGroups, categoryDivisions, playingCount, selectedWindow, calendarWindows, quickDates} from './matches.js';
 import {selectionState, toggleGroup, normalize, pending, competitionsForCategory} from './selection.js';
 import {crestMarkup, matchBadge, handleCrestError} from './crests.js';
 
@@ -143,7 +143,10 @@ function renderMatches() {
   const groups = matchGroups(matches.filter(m=>!pending(m)),$('#group-by').value,state.catalog,$('#only-mine').checked ? state.selected : null);
   const unassigned = matches.filter(pending);
   if (unassigned.length) groups.push({title:'Sin horario · pendientes de confirmar',items:matchGroups(unassigned,'date',state.catalog)[0].items});
-  $('#match-list').innerHTML = groups.map(group => `<section class="match-group">${group.title ? `<h2>${escape(group.title)} <small>${group.items.length} partidos</small></h2>` : ''}<div class="match-grid">${group.items.map(card).join('')}</div></section>`).join('') || `<div class="empty"><h3>${noSelection ? 'Elige tus equipos' : state.view === 'live' ? 'La grada está en espera' : 'Aún no hay partidos para mostrar'}</h3><p>${noSelection ? 'Selecciona equipos en «Mis equipos» o desactiva «Solo mis equipos» para ver todo el Bierzo.' : $('#demo').checked ? 'No hay ejemplos que coincidan con esta selección y estos filtros.' : 'Los partidos aparecerán al importar los datos de la federación. Puedes activar «Ver demostración» para explorar el diseño.'}</p>${noSelection ? '<button class="primary" data-view="teams">Seleccionar equipos</button>' : ''}</div>`;
+  const countLabel = items => `<span class="group-count">${items.length} ${items.length===1?'partido':'partidos'} <span class="playing-count">${$('#demo').checked ? playingCount(items)+' en juego' : 'Directo pendiente de conexión'}</span></span>`;
+  const itemsMarkup = items => {const scheduled=items.filter(m=>!pending(m));const unknown=items.filter(pending);return `<div class="match-grid">${scheduled.map(card).join('')}</div>${unknown.length?`<h4 class="pending-heading">Sin horario · ${unknown.length} pendientes</h4><div class="match-grid">${unknown.map(card).join('')}</div>`:''}`;};
+  const hierarchy = $('#group-by').value === 'category' ? categoryDivisions(matches,state.catalog).map(group=>`<details class="category-group" open><summary><strong>${escape(group.title)}</strong>${countLabel(group.items)}</summary>${group.divisions.map(division=>`<section class="division-group"><h3>${escape(division.title)}${countLabel(division.items)}</h3>${itemsMarkup(division.items)}</section>`).join('')}</details>`).join('') : '';
+  $('#match-list').innerHTML = hierarchy || groups.map(group => `<section class="match-group">${group.title ? `<h2>${escape(group.title)} ${countLabel(group.items)}</h2>` : ''}<div class="match-grid">${group.items.map(card).join('')}</div></section>`).join('') || `<div class="empty"><h3>${noSelection ? 'Elige tus equipos' : state.view === 'live' ? 'La grada está en espera' : 'Aún no hay partidos para mostrar'}</h3><p>${noSelection ? 'Selecciona equipos en Ajustes o pulsa «Todo el Bierzo».' : $('#demo').checked ? 'No hay ejemplos que coincidan con esta selección y estos filtros.' : 'Los partidos aparecerán al importar los datos de la federación. Puedes activar «Ver demostración» para explorar el diseño.'}</p>${noSelection ? '<button class="primary" data-view="teams">Seleccionar equipos</button>' : ''}</div>`;
 }
 
 async function loadMatches() {

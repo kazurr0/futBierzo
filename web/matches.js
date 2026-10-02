@@ -41,3 +41,12 @@ export function matchGroups(matches, mode, catalog, selected = null) {
   }
   return [...groups].sort(([a],[b]) => a.localeCompare(b,'es',{numeric:true})).map(([title,items]) => ({title,items:sort(items)}));
 }
+
+const AGE_ORDER = ['Debutantes','Prebenjamines','Benjamines','Alevines','Infantiles','Cadetes','Juveniles','Aficionados'];
+export function categoryDivisions(matches,catalog) {
+  const rank = title => {const n=AGE_ORDER.findIndex(c=>c.toLowerCase()===title.toLowerCase());return n<0?999:n;};
+  return matchGroups(matches,'category',catalog).sort((a,b)=>rank(a.title)-rank(b.title)||a.title.localeCompare(b.title,'es')).map(group=>({...group,divisions:matchGroups(group.items,'division',catalog)}));
+}
+export function playingCount(matches) {
+  return matches.filter(m=>m.status==='live').length;
+}
